@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgIf } from '@angular/common';
+import { LayoutModule } from '@angular/cdk/layout';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
@@ -33,6 +34,7 @@ import { CardVideoComponent } from './components/card-video/card-video.component
     BrowserModule,
     BrowserAnimationsModule,
     NgIf,
+    LayoutModule,
 
     MatSidenavModule,
     MatButtonModule,
