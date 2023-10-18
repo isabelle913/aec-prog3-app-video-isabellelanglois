@@ -1,4 +1,8 @@
+import { IAuteur } from './iauteur';
+import { IAvis } from './iavis';
+
 export interface IVideo {
+  id: number;
   nom: string;
   description: string;
   code: string;
@@ -8,15 +12,4 @@ export interface IVideo {
   duree: number;
   nbVues: number;
   avis: IAvis[];
-}
-
-interface IAuteur {
-  auteurNom: string;
-  coordonnees: string[];
-  auteurDescription: string;
-}
-
-interface IAvis {
-  note: number;
-  commentaires: string;
 }

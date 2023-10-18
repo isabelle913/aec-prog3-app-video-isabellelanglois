@@ -1,0 +1,26 @@
+<mat-card class="card__video">
+
+  <img mat-card-image
+    src="https://media.istockphoto.com/id/1272507749/photo/pointe-des-monts-lighthouse-at-dusk-with-reflections-in-the-sea-cote-nord-quebec.jpg?s=612x612&w=0&k=20&c=cVI-6ijsgiMBQs7hxpHpuOTxB9rxylROFScEEk2amhQ="
+    alt="Photo of a Shiba Inu">
+
+  <mat-chip-option class="card__duree">{{ video?.duree }}</mat-chip-option>
+
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ video?.nom }}</mat-card-title>
+    <mat-card-subtitle>{{ video?.auteur?.auteurNom }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>{{ video?.nbVues }} visionnements - publié {{ video?.datePublication }}</p>
+  </mat-card-content>
+
+</mat-card>
+<!--TODO Ajouter un avatar dans les Mock -->
+<!-- TODO comment utiliser les exemple
+  @Input()
+selected: boolean
+https://material.angular.io/components/chips/api
+ -->
+<!-- TODO comment mettre anglais/français -->

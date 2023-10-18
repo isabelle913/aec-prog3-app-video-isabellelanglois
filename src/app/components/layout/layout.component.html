@@ -1,0 +1,38 @@
+<app-header>
+  <button type="button" mat-icon-button (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <button type="button" mat-icon-button (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</app-header>
+
+<mat-drawer-container class="main-container" autosize>
+  <!-- TODO mettre toggle petit ou large menu -->
+  <!-- TODO mettre responsive avec icone sur côté -->
+  <!-- petit écran pas de petit menu, large menu passe par dessu -->
+  <!-- gran écran  toggle en petit menu et large menu passe qui pousse -->
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <div class="sidenav__item">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+      <p>Home</p>
+    </div>
+    <div class="sidenav__item">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+      <p>Home</p>
+    </div>
+    <div class="sidenav__item">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+      <p>Home</p>
+    </div>
+    <!-- <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button> -->
+  </mat-drawer>
+  <!-- TODO garder même layout pour soit liste de card ou fiche -->
+  <app-liste-video></app-liste-video>
+
+</mat-drawer-container>
+<app-footer></app-footer>
