@@ -19,6 +19,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardVideoComponent } from './components/card-video/card-video.component';
+import { MenuSmallComponent } from './components/menu-small/menu-small.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CardVideoComponent } from './components/card-video/card-video.component
     HeaderComponent,
     FooterComponent,
     CardVideoComponent,
+    MenuSmallComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,3 +59,4 @@ export class AppModule {}
 // TODO faire un mock pour les catégories
 // TODO faire un component pour les chips / catégorie
 // TODO apprendre les routes, voir fichier app-routing.module
+// TODO footer
