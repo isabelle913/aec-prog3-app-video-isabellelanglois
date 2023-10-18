@@ -53,4 +53,5 @@ export class AppModule {}
 // TODO essayer Tailwind
 // TODO faire un component pour la recherche
 // TODO faire un mock pour les catégories
-// todo faire un component pour les chips / catégorie
+// TODO faire un component pour les chips / catégorie
+// TODO apprendre les routes, voir fichier app-routing.module
