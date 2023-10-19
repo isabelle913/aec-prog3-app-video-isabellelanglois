@@ -1,2 +1,22 @@
-<app-layout></app-layout>
+<app-header>
+  <div class="w-[50px] flex flex-row justify-center ml-1">
+    <button type="button" mat-icon-button (click)="drawer.toggle(); onToggleDrawer()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+</app-header>
+
+<mat-drawer-container class="main-container" autosize>
+  <!-- TODO evaluer si garde les class main-container et sidenav dont le code est dans fichier layout.css -->
+  <mat-drawer #drawer class="sidenav" [mode]="isLargeScreen ? 'side' : 'over'">
+    <app-menu-std></app-menu-std>
+  </mat-drawer>
+  <div class="flex flex-row bg-white">
+    <app-menu-small *ngIf="!this.drawerToggle && !this.isSmallScreen"></app-menu-small>
+    <app-liste-video></app-liste-video>
+  </div>
+
+
+</mat-drawer-container>
+<app-footer></app-footer>
 <router-outlet></router-outlet>

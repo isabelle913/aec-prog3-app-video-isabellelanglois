@@ -1,5 +1,8 @@
 import { IVideo } from './interfaces/ivideo';
 
+// TODO déplacer dans dossier
+// TODO compléter données
+
 export const VIDEOS: IVideo[] = [
   {
     id: 1,

@@ -1,1 +1,7 @@
-<p>menu-small works!</p>
+<div class="w-[90px]  flex flex-col justify-start items-center gap-y-2 p-2 ">
+  <div *ngFor="let link of links"
+    class="flex flex-col justify-center items-center py-4 w-full hover:bg-slate-100 focus:bg-slate-100 rounded-lg cursor-pointer">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" [fontIcon]="link.icon" class="mb-2"></mat-icon>
+    <p class="text-xs non-marging">{{ link.name }}</p>
+  </div>
+</div>

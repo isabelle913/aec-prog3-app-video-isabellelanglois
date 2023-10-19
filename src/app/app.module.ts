@@ -15,22 +15,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListeVideoComponent } from './components/liste-video/liste-video.component';
 import { FicheVideoComponent } from './components/fiche-video/fiche-video.component';
-import { LayoutComponent } from './components/layout/layout.component';
+// import { LayoutComponent } from './components/layout/layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardVideoComponent } from './components/card-video/card-video.component';
 import { MenuSmallComponent } from './components/menu-small/menu-small.component';
+import { MenuStdComponent } from './components/menu-std/menu-std.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListeVideoComponent,
     FicheVideoComponent,
-    LayoutComponent,
+    // LayoutComponent,
     HeaderComponent,
     FooterComponent,
     CardVideoComponent,
     MenuSmallComponent,
+    MenuStdComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,9 +56,9 @@ export class AppModule {}
 
 // TODO Favicon
 // TODO faire Logo
-// TODO essayer Tailwind
 // TODO faire un component pour la recherche
 // TODO faire un mock pour les catégories
 // TODO faire un component pour les chips / catégorie
 // TODO apprendre les routes, voir fichier app-routing.module
 // TODO footer
+// TODO effacer layout

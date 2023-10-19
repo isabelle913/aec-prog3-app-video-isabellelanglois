@@ -1,34 +1,23 @@
-<app-header>
-  <button type="button" mat-icon-button (click)="drawer.toggle(); onToggleDrawer()">
-    <mat-icon>menu</mat-icon>
-  </button>
+<!-- <app-header>
+  <div class="w-[50px] flex flex-row justify-center ml-1">
+    <button type="button" mat-icon-button (click)="drawer.toggle(); onToggleDrawer()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+
 </app-header>
 
 <mat-drawer-container class="main-container" autosize>
 
   <app-menu-small *ngIf="!this.drawerToggle && !this.isSmallScreen"></app-menu-small>
   <mat-drawer #drawer class="sidenav" [mode]="isLargeScreen ? 'side' : 'over'">
-    <div class="sidenav__item">
-      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-      <p>Home</p>
-    </div>
-    <div class="sidenav__item">
-      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-      <p>Home</p>
-    </div>
-    <div class="sidenav__item">
-      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-      <p>Home</p>
-    </div>
-    <!-- <p>Auto-resizing sidenav</p>
-    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-    <button (click)="showFiller = !showFiller" mat-raised-button>
-      Toggle extra text
-    </button> -->
+    <app-menu-std></app-menu-std>
   </mat-drawer>
-  <!-- TODO garder même layout pour soit liste de card ou fiche -->
-  <div>{{ drawerToggle }} </div>
+
+
   <app-liste-video></app-liste-video>
 
+
+
 </mat-drawer-container>
-<app-footer></app-footer>
+<app-footer></app-footer> -->
