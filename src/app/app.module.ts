@@ -60,5 +60,4 @@ export class AppModule {}
 // TODO faire un mock pour les catégories
 // TODO faire un component pour les chips / catégorie
 // TODO apprendre les routes, voir fichier app-routing.module
-// TODO footer
 // TODO effacer layout
