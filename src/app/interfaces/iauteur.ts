@@ -1,15 +1,9 @@
+import { ICoordonnees } from './icoordonnees';
+
 export interface IAuteur {
   auteurNom: string;
-  avatar: string;
-  coordonnees: string[];
+  utilisateur: string;
+  avatar?: string;
+  coordonnees: ICoordonnees;
   auteurDescription: string;
 }
-
-/*
-TODO faire interface coordonnées
-adresse
-code postal
-
-
-
-*/
