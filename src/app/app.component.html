@@ -17,7 +17,10 @@
   </mat-drawer>
   <div class="flex flex-row bg-white">
     <app-menu-small *ngIf="!this.drawerToggle && !this.isSmallScreen"></app-menu-small>
-    <app-liste-video></app-liste-video>
+    <div>
+      <app-categories></app-categories>
+      <app-liste-video></app-liste-video>
+    </div>
   </div>
 
 
