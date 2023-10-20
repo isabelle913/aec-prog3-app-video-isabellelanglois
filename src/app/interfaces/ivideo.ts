@@ -5,6 +5,7 @@ export interface IVideo {
   id: number;
   nom: string;
   description: string;
+  media: string;
   code: string;
   categories: string[];
   auteur: IAuteur;
