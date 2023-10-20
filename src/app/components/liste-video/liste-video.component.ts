@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { VIDEOS } from 'src/app/mock-videos';
+import { VIDEOS } from 'src/app/mocks/mock-videos';
 
 @Component({
   selector: 'app-liste-video',
