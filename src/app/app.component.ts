@@ -7,8 +7,6 @@ import { BreakpointObserver } from '@angular/cdk/layout';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'app-video-isabellelanglois'; // TODO évaluer si nécessaire
-
   isSmallScreen = false;
   isLargeScreen = false;
 
