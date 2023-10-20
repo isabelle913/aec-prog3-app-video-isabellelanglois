@@ -14,10 +14,10 @@ import { MatChipsModule } from '@angular/material/chips';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListeVideoComponent } from './components/liste-video/liste-video.component';
-import { FicheVideoComponent } from './components/fiche-video/fiche-video.component';
+import { FullVideoComponent } from './components/full-video/full-video.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { CardVideoComponent } from './components/card-video/card-video.component';
+import { SmallVideoComponent } from './components/small-video/small-video.component';
 import { MenuSmallComponent } from './components/menu-small/menu-small.component';
 import { MenuStdComponent } from './components/menu-std/menu-std.component';
 import { SearchComponent } from './components/search/search.component';
@@ -28,10 +28,10 @@ import { UtilisateurComponent } from './components/utilisateur/utilisateur.compo
   declarations: [
     AppComponent,
     ListeVideoComponent,
-    FicheVideoComponent,
+    FullVideoComponent,
     HeaderComponent,
     FooterComponent,
-    CardVideoComponent,
+    SmallVideoComponent,
     MenuSmallComponent,
     MenuStdComponent,
     SearchComponent,
@@ -61,5 +61,4 @@ export class AppModule {}
 // TODO Favicon
 // TODO faire Logo
 // TODO apprendre les routes, voir fichier app-routing.module
-// TODO effacer layout
 // TODO corriger le footer / enlever le scroll

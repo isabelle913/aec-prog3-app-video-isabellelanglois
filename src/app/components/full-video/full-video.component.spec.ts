@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CardVideoComponent } from './card-video.component';
+import { FullVideoComponent } from './full-video.component';
 
-describe('CardVideoComponent', () => {
-  let component: CardVideoComponent;
-  let fixture: ComponentFixture<CardVideoComponent>;
+describe('FullVideoComponent', () => {
+  let component: FullVideoComponent;
+  let fixture: ComponentFixture<FullVideoComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CardVideoComponent]
+      declarations: [FullVideoComponent],
     });
-    fixture = TestBed.createComponent(CardVideoComponent);
+    fixture = TestBed.createComponent(FullVideoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
