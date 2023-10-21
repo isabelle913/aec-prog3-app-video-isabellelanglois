@@ -8,4 +8,6 @@ import { IVideo } from 'src/app/interfaces/ivideo';
 })
 export class SmallVideoComponent {
   @Input() video?: IVideo;
+
+  mediaDefaut = '../../../assets/logo_300-170.png';
 }
