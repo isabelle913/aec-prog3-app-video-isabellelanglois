@@ -58,7 +58,5 @@ import { UtilisateurComponent } from './components/utilisateur/utilisateur.compo
 })
 export class AppModule {}
 
-// TODO Favicon
-// TODO faire Logo
 // TODO apprendre les routes, voir fichier app-routing.module
 // TODO corriger le footer / enlever le scroll

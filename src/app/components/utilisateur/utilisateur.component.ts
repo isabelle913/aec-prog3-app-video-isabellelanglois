@@ -14,3 +14,4 @@ export class UtilisateurComponent {
     ? `Avatar de ${this.utilisateur?.auteurNom}`
     : 'Avatar';
 }
+// TODO changer pour recevoir nom et ... pourrait être pour un utilisateur
