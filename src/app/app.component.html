@@ -1,4 +1,4 @@
-<app-header>
+<app-header [utilisateur]="videos[0].auteur">
   <div class="w-[50px] flex flex-row justify-center ml-1">
     <button type="button" mat-icon-button (click)="drawer.toggle(); onToggleDrawer()">
       <mat-icon>menu</mat-icon>
@@ -11,7 +11,6 @@
   <mat-drawer #drawer class="sidenav" [mode]="isLargeScreen ? 'side' : 'over'">
     <div class="flex flex-col justify-between h-screen">
       <app-menu-std></app-menu-std>
-      <!-- Mettre le coucou en bas du menu -->
       <app-footer></app-footer>
     </div>
   </mat-drawer>
@@ -28,3 +27,4 @@
 
 <router-outlet></router-outlet>
 <!-- TODO corriger le header qui se cache -->
+<!-- TODO corriger le la position du footere -->

@@ -11,7 +11,8 @@ export const VIDEOS: IVideo[] = [
     categories: ['Voyager', 'Québec'],
     auteur: {
       auteurNom: 'Une curieuse',
-      utilisateur: '',
+      utilisateur: 'test@test.ca',
+      verifie: true,
       avatar: '',
       coordonnees: {},
       auteurDescription: '',
@@ -66,6 +67,7 @@ export const VIDEOS: IVideo[] = [
     auteur: {
       auteurNom: '',
       utilisateur: '',
+      verifie: true,
       avatar: '',
       coordonnees: {},
       auteurDescription: '',
@@ -93,6 +95,7 @@ export const VIDEOS: IVideo[] = [
     auteur: {
       auteurNom: 'Une curieuse',
       utilisateur: '',
+      verifie: true,
       avatar: '',
       coordonnees: {},
       auteurDescription: '',
@@ -147,6 +150,7 @@ export const VIDEOS: IVideo[] = [
     auteur: {
       auteurNom: 'Une curieuse',
       utilisateur: '',
+      verifie: true,
       avatar: '',
       coordonnees: {},
       auteurDescription: '',
@@ -201,6 +205,7 @@ export const VIDEOS: IVideo[] = [
     auteur: {
       auteurNom: 'Une curieuse',
       utilisateur: '',
+      verifie: true,
       avatar: '',
       coordonnees: {},
       auteurDescription: '',
@@ -250,6 +255,7 @@ export const VIDEOS: IVideo[] = [
     auteur: {
       auteurNom: 'Une curieuse',
       utilisateur: '',
+      verifie: true,
       avatar: '',
       coordonnees: {},
       auteurDescription: '',

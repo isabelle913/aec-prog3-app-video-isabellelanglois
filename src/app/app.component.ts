@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { VIDEOS } from './mocks/mock-videos';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,8 @@ import { BreakpointObserver } from '@angular/cdk/layout';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  videos = VIDEOS;
+
   isSmallScreen = false;
   isLargeScreen = false;
 
