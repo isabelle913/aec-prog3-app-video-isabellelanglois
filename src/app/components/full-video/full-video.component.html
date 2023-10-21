@@ -1,1 +1,15 @@
-<p>{{ video?.nom }}</p>
+<div *ngIf="videoCurrent; else elseBlock">
+  <p>Bonjour</p>
+
+</div>
+<ng-template #elseBlock>
+  <div class="mx-auto flex flex-col items-center">
+    <p class="text-5xl py-10">Cette URL est invalide</p>
+    <div>
+      <button type="button" (click)="goBack()"
+        class="text-3xl bg-red-600 p-6 text-white rounded-lg hover:shadow-lg hover:scale-110 focus:shadow-lg focus:scale-110 focus:outline-none">Retouner
+        à la page
+        précédante</button>
+    </div>
+  </div>
+</ng-template>

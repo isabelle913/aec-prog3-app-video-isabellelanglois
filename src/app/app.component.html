@@ -17,14 +17,14 @@
 
   <div class="flex flex-row bg-white">
     <app-menu-small *ngIf="!this.drawerToggle && !this.isSmallScreen"></app-menu-small>
-    <div>
+    <div class="h-screen">
       <app-categories></app-categories>
-      <app-liste-video></app-liste-video>
+      <router-outlet></router-outlet>
     </div>
   </div>
 
 </mat-drawer-container>
 
-<router-outlet></router-outlet>
+
 <!-- TODO corriger le header qui se cache -->
 <!-- TODO corriger le la position du footere -->

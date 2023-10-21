@@ -35,7 +35,7 @@ export const VIDEOS: IVideo[] = [
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
     media: 'https://picsum.photos/id/48/300/170',
-    code: 'V002',
+    code: 'L001',
     categories: ['Apprendre', 'Programmation', 'JavaScript'],
     auteur: {
       auteurNom: '',
@@ -62,7 +62,7 @@ export const VIDEOS: IVideo[] = [
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
     media: 'https://picsum.photos/id/15/300/170',
-    code: '',
+    code: 'P001',
     categories: ['Photographie', 'Apprendre'],
     auteur: {
       auteurNom: '',
@@ -90,7 +90,7 @@ export const VIDEOS: IVideo[] = [
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
     media: 'https://picsum.photos/id/169/300/170',
-    code: 'V001',
+    code: 'A001',
     categories: ['Chevaux'],
     auteur: {
       auteurNom: 'Une curieuse',
@@ -118,7 +118,7 @@ export const VIDEOS: IVideo[] = [
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
     media: 'https://picsum.photos/id/201/300/170',
-    code: 'V001',
+    code: 'L002',
     categories: ['Apprendre', 'Programmation', 'Angular'],
     auteur: {
       auteurNom: 'Une curieuse',
@@ -145,7 +145,7 @@ export const VIDEOS: IVideo[] = [
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
     media: 'https://picsum.photos/id/91/300/170',
-    code: 'V001',
+    code: 'L003',
     categories: ['Apprendre', 'Photoshop', 'Photographie'],
     auteur: {
       auteurNom: 'Une curieuse',
@@ -173,7 +173,7 @@ export const VIDEOS: IVideo[] = [
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
     media: 'https://picsum.photos/id/208/300/170',
-    code: 'V001',
+    code: 'C001',
     categories: ['Cinéma'],
     auteur: {
       auteurNom: 'Une curieuse',
@@ -200,7 +200,7 @@ export const VIDEOS: IVideo[] = [
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
     media: 'https://picsum.photos/id/342/300/170',
-    code: 'V001',
+    code: 'V002',
     categories: ['Voyager'],
     auteur: {
       auteurNom: 'Une curieuse',
@@ -228,7 +228,7 @@ export const VIDEOS: IVideo[] = [
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
     media: '',
-    code: 'V001',
+    code: 'C002',
     categories: ['Film'],
     auteur: {
       auteurNom: 'Une curieuse',
@@ -250,7 +250,7 @@ export const VIDEOS: IVideo[] = [
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
     media: 'https://picsum.photos/id/58/300/170',
-    code: 'V001',
+    code: 'P002',
     categories: ['Photographie'],
     auteur: {
       auteurNom: 'Une curieuse',

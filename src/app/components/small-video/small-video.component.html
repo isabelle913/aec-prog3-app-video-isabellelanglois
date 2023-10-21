@@ -1,7 +1,6 @@
-<mat-card class="card__video">
+<mat-card class="card__video hover:scale-110 focus:scale-110 focus:outline-none" (click)="goTo()" tabindex="0">
 
   <img mat-card-image [src]="video?.media || mediaDefaut" [alt]="video?.nom" class="bg-slate-100">
-  <!-- <img mat-card-image [src]="mediaDefaut" [alt]="video?.nom" class="bg-slate-100"> -->
 
   <mat-chip-option class="card__duree">{{ video?.duree }}</mat-chip-option>
 
@@ -15,6 +14,3 @@
   </mat-card-content>
 
 </mat-card>
-
-
-<!-- TODO ajouter logo comme image par default si pas d'image -->

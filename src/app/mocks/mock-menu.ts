@@ -4,16 +4,16 @@ export const LINKS: ILink[] = [
   {
     icon: 'home',
     name: 'Accueil',
-    to: 'la-bas :)',
+    to: '/',
   },
   {
     icon: 'favorite',
     name: 'Favoris',
-    to: 'la-bas :)',
+    to: '/',
   },
   {
     icon: 'history',
     name: 'Historique',
-    to: 'la-bas :)',
+    to: '/)',
   },
 ];
