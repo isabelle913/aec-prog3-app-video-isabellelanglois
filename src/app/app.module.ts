@@ -62,3 +62,4 @@ export class AppModule {}
 // TODO corriger le footer / enlever le scroll
 // TODO trouver à utiliser ngClass
 // TODO fixer entête et menu
+// TODO chercher outil google pour angular

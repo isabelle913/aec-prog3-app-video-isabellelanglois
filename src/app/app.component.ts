@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { VIDEOS } from './mocks/mock-videos';
-import { CATEGORIES } from 'src/app/mocks/mock-categories';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +9,9 @@ import { CATEGORIES } from 'src/app/mocks/mock-categories';
 })
 export class AppComponent {
   videos = VIDEOS;
-  categories = CATEGORIES;
-
   utilisateur = this.videos[0].auteur;
   isSmallScreen = false;
   isLargeScreen = false;
-
   drawerToggle = false;
 
   /*
