@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CATEGORIES } from 'src/app/mocks/mock-categories';
 import { VIDEOS } from 'src/app/mocks/mock-videos';
 
 @Component({
@@ -8,4 +9,5 @@ import { VIDEOS } from 'src/app/mocks/mock-videos';
 })
 export class ListeVideoComponent {
   videos = VIDEOS;
+  categories = CATEGORIES;
 }

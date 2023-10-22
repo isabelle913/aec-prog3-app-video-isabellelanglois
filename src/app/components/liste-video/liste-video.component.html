@@ -1,4 +1,7 @@
-<div class="liste__container">
-  <app-small-video *ngFor="let video of videos" [video]="video"></app-small-video>
+<div class="p-5">
+  <app-categories [categories]="categories"></app-categories>
+  <div class="liste__container">
+    <app-small-video *ngFor="let video of videos" [video]="video"></app-small-video>
+  </div>
+  <div class="text-center text-4xl py-5">Carine clique sur une carte de petit vidéo pour voir le grand vidéo</div>
 </div>
-<div class="text-center text-4xl">Carine clique sur une carte de petit vidéo pour voir le grand vidéo</div>
