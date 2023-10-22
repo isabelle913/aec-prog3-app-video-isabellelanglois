@@ -11,15 +11,15 @@ import { VIDEOS } from 'src/app/mocks/mock-videos';
 })
 export class FullVideoComponent {
   videos = VIDEOS;
-  videoCurrent: IVideo | undefined;
+  video: IVideo | undefined;
+  mediaDefaut = '../../../assets/logo_300-170.png';
 
   constructor(private route: ActivatedRoute, private location: Location) {}
 
   ngOnInit(): void {
     const videoCode: string | null = this.route.snapshot.paramMap.get('code');
-    console.log(videoCode);
-    this.videoCurrent = this.videos.find((video) => video.code === videoCode);
-    console.log(this.videoCurrent);
+    this.video = this.videos.find((video) => video.code === videoCode);
+    console.log(this.video);
   }
   goBack(): void {
     this.location.back();

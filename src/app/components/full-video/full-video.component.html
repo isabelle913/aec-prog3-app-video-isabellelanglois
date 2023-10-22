@@ -1,5 +1,28 @@
-<div *ngIf="videoCurrent; else elseBlock">
-  <p>Bonjour</p>
+<div *ngIf="video; else elseBlock" class="grid grid-cols-12 mx-auto  ">
+  <img [src]="video.media || mediaDefaut" [alt]="video.nom"
+    class="col-span-12 justify-self-center bg-slate-100 rounded-lg">
+  <div class="col-span-12 grid grid grid-cols-12 p-5">
+    <div class="col-span-12 text-4xl my-5">{{ video.nom }}</div>
+    <app-utilisateur class="col-span-6" [utilisateur]="video.auteur"></app-utilisateur>
+    <div class="col-span-6"></div>
+    <div class="col-span-9 mr-5">
+      <app-categories [categories]="video.categories"></app-categories>
+      <div>{{ video.description }}</div>
+    </div>
+    <div class="col-span-3 p-5 border-solid border-2 border-black rounded-lg">
+      <div>Publié le: {{ video.datePublication }}</div>
+      <div>Visionné: {{ video.datePublication }}</div>
+    </div>
+    <div class="col-span-12">Avis</div>
+
+
+
+  </div>
+
+
+
+
+
 
 </div>
 <ng-template #elseBlock>
@@ -13,3 +36,28 @@
     </div>
   </div>
 </ng-template>
+
+<!--
+
+idée:
+- mettre les catégories qui corresondant à mon vidéo de couleur
+- mettre les catégories dans la portion de droite
+- ajouter soit rien CC ou ST selon la valeur video.subtitle
+
+
+TODO voir exercice du dernier cours pour ce devoir et les autres cours afin de s'assurer de rien oublier
+
+
+    duree: 12,
+    score: 0, donner un style différent lors d'un bon score
+
+    subtitle: '',
+    avis: [
+      {
+        note: 0,
+        commentaires: '',
+      },
+    ],
+  },
+
+ -->
