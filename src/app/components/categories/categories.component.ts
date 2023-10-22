@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { CATEGORIES } from 'src/app/mocks/mock-categories';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-categories',
@@ -7,5 +6,5 @@ import { CATEGORIES } from 'src/app/mocks/mock-categories';
   styleUrls: ['./categories.component.css'],
 })
 export class CategoriesComponent {
-  categories = CATEGORIES;
+  @Input() categories: string[] = [];
 }
