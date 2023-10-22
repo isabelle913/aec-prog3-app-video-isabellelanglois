@@ -1,7 +1,7 @@
 import { ICoordonnees } from './icoordonnees';
 
 export interface IAuteur {
-  auteurNom: string;
+  nom: string;
   utilisateur: string;
   verifie?: boolean;
   avatar?: string;

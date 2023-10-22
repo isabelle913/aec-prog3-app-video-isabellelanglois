@@ -10,8 +10,7 @@ export class UtilisateurComponent {
   @Input() utilisateur?: IAuteur;
 
   avatar = this.utilisateur?.avatar || 'https://picsum.photos/id/40/40/40';
-  avatarAlt = this.utilisateur?.auteurNom
-    ? `Avatar de ${this.utilisateur?.auteurNom}`
+  avatarAlt = this.utilisateur?.nom
+    ? `Avatar de ${this.utilisateur?.nom}`
     : 'Avatar';
 }
-// TODO changer pour recevoir nom et ... pourrait être pour un utilisateur

@@ -5,7 +5,7 @@
 
   <div class="flex flex-col ml-4">
     <div class="flex flex-row">
-      <p class="non-marging text-md">{{ utilisateur?.auteurNom || 'Anonyme' }}</p>
+      <p class="non-marging text-md">{{ utilisateur?.nom || 'Anonyme' }}</p>
       <div class="flex flex-col justify-center px-3">
         <mat-icon *ngIf="utilisateur?.verifie" aria-hidden="false" aria-label="Example home icon"
           fontIcon="verified_user" class="text-red-600"></mat-icon>
@@ -15,5 +15,3 @@
     <p class="place-item-center non-marging text-slate-400 text-xs">{{ utilisateur?.utilisateur }}</p>
   </div>
 </div>
-
-<!-- TODO Faire un utilisateur pour le header -->
