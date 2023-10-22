@@ -13,6 +13,6 @@ export interface IVideo {
   duree: number;
   nbVues: number;
   score: number;
-  subtitle: string;
+  subtitle?: string;
   avis?: IAvis[];
 }
