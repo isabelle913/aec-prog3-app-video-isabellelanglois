@@ -1,3 +1,4 @@
-<mat-chip-listbox aria-label="List of categories" class="p-5">
-  <mat-chip-option *ngFor="let categorie of categories">{{ categorie }}</mat-chip-option>
+<mat-chip-listbox [ngClass]="{'mat-mdc-chip-set-stacked': stacked}" aria-label="List of categories">
+  <mat-chip-option *ngFor="let categorie of categories" [selected]="stacked" [color]="randomColor()">{{ categorie
+    }}</mat-chip-option>
 </mat-chip-listbox>
