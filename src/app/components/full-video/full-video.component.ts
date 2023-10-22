@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { IVideo } from 'src/app/interfaces/ivideo';
@@ -13,13 +14,21 @@ export class FullVideoComponent {
   videos = VIDEOS;
   video: IVideo | undefined;
   mediaDefaut = '../../../assets/logo_300-170.png';
+  isLargerThen1024 = false;
 
-  constructor(private route: ActivatedRoute, private location: Location) {}
+  constructor(
+    private route: ActivatedRoute,
+    private location: Location,
+    private observer: BreakpointObserver
+  ) {
+    this.observer.observe(['(min-width: 1024px)']).subscribe((result) => {
+      this.isLargerThen1024 = result.breakpoints['(min-width: 1024px)'];
+    });
+  }
 
   ngOnInit(): void {
     const videoCode: string | null = this.route.snapshot.paramMap.get('code');
     this.video = this.videos.find((video) => video.code === videoCode);
-    console.log(this.video);
   }
   goBack(): void {
     this.location.back();

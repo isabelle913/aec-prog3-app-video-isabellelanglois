@@ -1,31 +1,46 @@
-<div *ngIf="video; else elseBlock" class="grid grid-cols-12 mx-auto  ">
+<div *ngIf="video; else elseVideoBlock" class="grid grid-cols-12 mx-auto p-5">
+
   <img [src]="video.media || mediaDefaut" [alt]="video.nom"
     class="col-span-12 justify-self-center bg-slate-100 rounded-lg">
-  <div class="col-span-12 grid grid grid-cols-12 p-5">
-    <div class="col-span-12 text-4xl my-5">{{ video.nom }}</div>
-    <app-utilisateur class="col-span-6" [utilisateur]="video.auteur"></app-utilisateur>
-    <div class="col-span-6"></div>
-    <div class="col-span-9 mr-5">
-      <app-categories [categories]="video.categories"></app-categories>
-      <div>{{ video.description }}</div>
-    </div>
-    <div class="col-span-3 p-5 border-solid border-2 border-black rounded-lg">
-      <div>Publié le: {{ video.datePublication }}</div>
-      <div>Visionné: {{ video.datePublication }}</div>
-    </div>
-    <div class="col-span-12">Avis</div>
+
+  <div class="col-span-12 text-4xl my-5">{{ video.nom }}</div>
 
 
+  <app-utilisateur class="col-span-12  my-5" [utilisateur]="video.auteur"></app-utilisateur>
 
+
+  <div
+    class="col-span-12 lg:col-span-3  lg:col-start-10 lg:col-end-13 lg:row-start-4 lg:row-end-6 lg:ml-5  p-5 bg-blue-50 rounded-lg my-5">
+    <!-- border-solid border-2 border-blue-300 -->
+    <app-categories [categories]="video.categories" [stacked]="isLargerThen1024"></app-categories>
+    <div>Publié le: {{ video.datePublication }}</div>
+    <div>Visionné: {{ video.datePublication }}</div>
+  </div>
+
+  <div *ngIf="video.description" class="col-span-12 lg:col-span-9 my-5">
+    <div><span class="font-bold">Description: </span>{{ video.description }}</div>
   </div>
 
 
-
-
-
-
+  <div *ngIf="video.avis" class="col-span-12 lg:col-span-9">
+    <div class="font-bold">{{ video.avis.length }} commentaire<span *ngIf="video.avis.length > 1">s</span>:
+    </div>
+    <ul>
+      <li *ngFor="let oneAvis of video.avis" role="listitem" class="my-5">
+        <div class="grid grid-cols-12 rounded-lg p-3"
+          [class]="{'bg-green-50': oneAvis.note > 5, 'bg-red-50': oneAvis.note <= 5}">
+          <div class="col-span-10 overflow-hidden ">{{ oneAvis.commentaires }}</div>
+          <div class="col-span-2 ml-5 text-right">{{ oneAvis.note }} / 10</div>
+        </div>
+      </li>
+    </ul>
+    <div *ngIf="!video.avis || video.avis === undefined" class="col-span-12 bg-blue-50 rounded-lg p-3 my-5">Aucun avis
+    </div>
+  </div>
 </div>
-<ng-template #elseBlock>
+
+<!-- Si mauvais url qui donne un code invalide, les usagés coquins -->
+<ng-template #elseVideoBlock>
   <div class="mx-auto flex flex-col items-center">
     <p class="text-5xl py-10">Cette URL est invalide</p>
     <div>
