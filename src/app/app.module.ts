@@ -60,3 +60,5 @@ export class AppModule {}
 
 // TODO apprendre les routes, voir fichier app-routing.module
 // TODO corriger le footer / enlever le scroll
+// TODO trouver à utiliser ngClass
+// TODO fixer entête et menu

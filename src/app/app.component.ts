@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { VIDEOS } from './mocks/mock-videos';
+import { CATEGORIES } from 'src/app/mocks/mock-categories';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +10,16 @@ import { VIDEOS } from './mocks/mock-videos';
 })
 export class AppComponent {
   videos = VIDEOS;
+  categories = CATEGORIES;
 
+  utilisateur = this.videos[0].auteur;
   isSmallScreen = false;
   isLargeScreen = false;
 
   drawerToggle = false;
 
   /*
-  TODO ?? question pour avoir valeur réactive autre qu'installer une librairie
+ // TODO ?? question pour avoir valeur réactive autre qu'installer une librairie
   // petit menu si drawerToggle = false et  isSmallScreen = false
   // tentative 1
   // isSmallMenuOpen = !this.drawerToggle && !this.isSmallScreen ? true : false;
