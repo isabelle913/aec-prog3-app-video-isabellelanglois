@@ -34,5 +34,3 @@ export class FullVideoComponent {
     this.location.back();
   }
 }
-
-// TODO effacer les console.log
