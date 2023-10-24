@@ -97,7 +97,7 @@ export const VIDEOS: IVideo[] = [
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
     media: 'https://picsum.photos/id/169/1500/850',
     code: 'A001',
-    categories: ['Chevaux'],
+    categories: ['Chevaux', 'Règne animal'],
     auteur: {
       nom: 'Une curieuse',
       utilisateur: '',

@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./categories.component.css'],
 })
 export class CategoriesComponent {
-  @Input() categories: string[] = [];
+  @Input() categories: string[] | undefined = [];
   @Input() stacked: boolean = false;
   @Input() color: boolean = false;
 

@@ -5,26 +5,14 @@
 
   <div class="col-span-12 text-4xl my-5">{{ video.nom }}</div>
 
-  <div class="col-span-12 lg:col-span-9  my-5">
-    <div class="flex flex-row justify-between">
-      <app-utilisateur [utilisateur]="video.auteur"></app-utilisateur>
-      <app-thumbs [score]="video.score"></app-thumbs>
-
-    </div>
-
+  <div class="col-span-12 lg:col-span-9  my-5 flex flex-row justify-between">
+    <app-utilisateur [utilisateur]="video.auteur"></app-utilisateur>
+    <app-thumbs [score]="video.score"></app-thumbs>
   </div>
-
 
   <div
     class="col-span-12 lg:col-span-3  lg:col-start-10 lg:col-end-13 lg:row-start-3 lg:row-end-6 lg:ml-5  p-5 bg-blue-50 rounded-lg my-5">
-    <!-- border-solid border-2 border-blue-300 -->
-    <app-categories [categories]="video.categories" [stacked]="isLargerThen1024" [color]="true"></app-categories>
-    <div class="mt-5 flex flex-row lg:flex-col justify-start gap-x-5 lg:gap-y-3">
-      <div>Publié le: {{ video.datePublication }}</div>
-      <div>Visionné: {{ video.nbVues }}</div>
-    </div>
-    <div class="text-right lg:mt-5">Vidéo: {{ video.code }}</div>
-
+    <app-info-video [video]="video"></app-info-video>
   </div>
 
   <div *ngIf="video.description" class="col-span-12 lg:col-span-9 my-5">
@@ -53,12 +41,10 @@
 <ng-template #elseVideoBlock>
   <div class="mx-auto flex flex-col items-center">
     <p class="text-5xl py-10">Cette URL est invalide</p>
-    <div>
-      <button type="button" (click)="goBack()"
-        class="text-3xl bg-red-600 p-6 text-white rounded-lg hover:shadow-lg hover:scale-110 focus:shadow-lg focus:scale-110 focus:outline-none">Retouner
-        à la page
-        précédante</button>
-    </div>
+    <button type="button" (click)="goBack()"
+      class="text-3xl bg-red-600 p-6 text-white rounded-lg hover:shadow-lg hover:scale-110 focus:shadow-lg focus:scale-110 focus:outline-none">Retouner
+      à la page
+      précédante</button>
   </div>
 </ng-template>
 
@@ -71,17 +57,9 @@ idée:
 
 TODO voir exercice du dernier cours pour ce devoir et les autres cours afin de s'assurer de rien oublier
 
-
     duree: 12,
-    score: 0, donner un style différent lors d'un bon score
 
     subtitle: '',
-    avis: [
-      {
-        note: 0,
-        commentaires: '',
-      },
-    ],
-  },
+
 
  -->

@@ -21,10 +21,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SmallVideoComponent } from './components/small-video/small-video.component';
 import { MenuSmallComponent } from './components/menu-small/menu-small.component';
 import { MenuStdComponent } from './components/menu-std/menu-std.component';
-import { SearchComponent } from './components/search/search.component';
-import { CategoriesComponent } from './components/categories/categories.component';
-import { UtilisateurComponent } from './components/utilisateur/utilisateur.component';
+import { SearchComponent } from './components/utils/search/search.component';
+import { CategoriesComponent } from './components/utils/categories/categories.component';
+import { UtilisateurComponent } from './components/utils/utilisateur/utilisateur.component';
 import { ThumbsComponent } from './components/utils/thumbs/thumbs.component';
+import { InfoVideoComponent } from './components/utils/info-video/info-video.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ThumbsComponent } from './components/utils/thumbs/thumbs.component';
     CategoriesComponent,
     UtilisateurComponent,
     ThumbsComponent,
+    InfoVideoComponent,
   ],
   imports: [
     BrowserModule,
