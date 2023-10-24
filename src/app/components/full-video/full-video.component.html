@@ -1,7 +1,16 @@
 <div *ngIf="video; else elseVideoBlock" class="grid grid-cols-12 mx-auto p-5">
 
-  <img [src]="video.media || mediaDefaut" [alt]="video.nom"
-    class="col-span-12 justify-self-center bg-slate-100 rounded-lg">
+  <div class="col-span-12 justify-self-center bg-slate-100 relative">
+    <img class="rounded-lg" [src]="video.media || mediaDefaut" [alt]="video.nom">
+
+    <div class="absolute bottom-5 right-10 bg-slate-100/50 flex flex-row gap-x-4 px-4 py-2 rounded-lg items-center">
+      <mat-icon *ngIf="video.subtitle === 'cc'" aria-hidden="false" aria-label="Icon closed caption"
+        fontIcon="closed_caption" class="scale-150  text-white"></mat-icon>
+      <mat-icon *ngIf="video.subtitle === 'st'" aria-hidden="false" aria-label="Icon subtitles" fontIcon="subtitles"
+        class="scale-150 text-white"></mat-icon>
+      <mat-chip-option class="card__duree">{{ video?.duree }}</mat-chip-option>
+    </div>
+  </div>
 
   <div class="col-span-12 text-4xl my-5">{{ video.nom }}</div>
 
