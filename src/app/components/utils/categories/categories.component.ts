@@ -32,4 +32,4 @@ export class CategoriesComponent {
     this.colorPosition = -1;
   }
 }
-// TODO ?? voir erreur dans console
+// TODO ?? voir erreur dans console les couleurs données aux chips

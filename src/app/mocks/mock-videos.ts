@@ -264,7 +264,7 @@ export const VIDEOS: IVideo[] = [
     duree: 3,
     nbVues: 125,
     score: 0,
-    subtitle: '',
+    subtitle: 'st',
     avis: [
       {
         note: 9,
@@ -302,7 +302,7 @@ export const VIDEOS: IVideo[] = [
     duree: 6,
     nbVues: 15,
     score: 0,
-    subtitle: '',
+    subtitle: 'st',
     avis: [],
   },
   {
@@ -325,7 +325,7 @@ export const VIDEOS: IVideo[] = [
     duree: 15,
     nbVues: 2000,
     score: 0,
-    subtitle: '',
+    subtitle: 'cc',
     avis: [
       {
         note: 9,
