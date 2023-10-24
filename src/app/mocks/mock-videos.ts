@@ -1,5 +1,5 @@
 import { IVideo } from '../interfaces/ivideo';
-
+// TODO ?? est-ce plus économique de charger petites et grandes photos
 export const VIDEOS: IVideo[] = [
   {
     id: 1,
@@ -20,7 +20,7 @@ export const VIDEOS: IVideo[] = [
     datePublication: '15 octobre 2015',
     duree: 15,
     nbVues: 15,
-    score: 0,
+    score: 5,
     subtitle: '', // facultatif
     avis: [
       {

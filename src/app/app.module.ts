@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,7 @@ import { MenuStdComponent } from './components/menu-std/menu-std.component';
 import { SearchComponent } from './components/search/search.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { UtilisateurComponent } from './components/utilisateur/utilisateur.component';
+import { ThumbsComponent } from './components/utils/thumbs/thumbs.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { UtilisateurComponent } from './components/utilisateur/utilisateur.compo
     SearchComponent,
     CategoriesComponent,
     UtilisateurComponent,
+    ThumbsComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +53,7 @@ import { UtilisateurComponent } from './components/utilisateur/utilisateur.compo
     MatIconModule,
     MatCardModule,
     MatChipsModule,
+    MatDividerModule,
 
     AppRoutingModule,
   ],
