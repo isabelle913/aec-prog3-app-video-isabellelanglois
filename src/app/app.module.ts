@@ -64,8 +64,6 @@ import { InfoVideoComponent } from './components/utils/info-video/info-video.com
 })
 export class AppModule {}
 
-// TODO apprendre les routes, voir fichier app-routing.module
 // TODO corriger le footer / enlever le scroll
-// TODO trouver à utiliser ngClass
 // TODO fixer entête et menu
-// TODO chercher outil google pour angular
+// TODO Changer
