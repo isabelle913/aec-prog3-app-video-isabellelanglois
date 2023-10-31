@@ -11,13 +11,6 @@ VIDEOS.forEach((video) => {
 });
 const categoriesArr = [...categoriesSet];
 
-// const categoriesArrOrdered = categoriesArr.sort(
-//   (a: string, b: string): number => {
-//     if (a > b) return 1;
-//     if (b > a) return -1;
-//   }
-// );
+const categoriesArrOrdered = categoriesArr.sort();
 
-export const CATEGORIES: string[] = categoriesArr;
-
-// TODO ?? erreur typeScript sur fonction sort
+export const CATEGORIES: string[] = categoriesArrOrdered;
