@@ -1,5 +1,5 @@
 import { IVideo } from '../interfaces/ivideo';
-// TODO ?? est-ce plus économique de charger petites et grandes photos
+
 export const VIDEOS: IVideo[] = [
   {
     id: 1,
@@ -39,8 +39,8 @@ export const VIDEOS: IVideo[] = [
     code: 'L001',
     categories: ['Apprendre', 'Programmation', 'JavaScript'],
     auteur: {
-      nom: '',
-      utilisateur: '',
+      nom: 'Une curieuse',
+      utilisateur: 'test@test.ca',
       avatar: '',
       coordonnees: {},
       auteurDescription: '',
@@ -60,8 +60,8 @@ export const VIDEOS: IVideo[] = [
     code: 'P001',
     categories: ['Photographie', 'Apprendre'],
     auteur: {
-      nom: '',
-      utilisateur: '',
+      nom: 'Une curieuse',
+      utilisateur: 'test@test.ca',
       verifie: true,
       avatar: '',
       coordonnees: {},
@@ -100,7 +100,7 @@ export const VIDEOS: IVideo[] = [
     categories: ['Chevaux', 'Règne animal'],
     auteur: {
       nom: 'Une curieuse',
-      utilisateur: '',
+      utilisateur: 'test@test.ca',
       verifie: true,
       avatar: '',
       coordonnees: {},
@@ -139,7 +139,7 @@ export const VIDEOS: IVideo[] = [
     categories: ['Apprendre', 'Programmation', 'Angular'],
     auteur: {
       nom: 'Une curieuse',
-      utilisateur: '',
+      utilisateur: 'test@test.ca',
       avatar: '',
       coordonnees: {},
       auteurDescription: '',
@@ -177,7 +177,7 @@ export const VIDEOS: IVideo[] = [
     categories: ['Apprendre', 'Photoshop', 'Photographie'],
     auteur: {
       nom: 'Une curieuse',
-      utilisateur: '',
+      utilisateur: 'test@test.ca',
       verifie: true,
       avatar: '',
       coordonnees: {},
@@ -216,7 +216,7 @@ export const VIDEOS: IVideo[] = [
     categories: ['Cinéma'],
     auteur: {
       nom: 'Une curieuse',
-      utilisateur: '',
+      utilisateur: 'test@test.ca',
       avatar: '',
       coordonnees: {},
       auteurDescription: '',
@@ -224,7 +224,7 @@ export const VIDEOS: IVideo[] = [
     datePublication: '15 octobre 2015',
     duree: 6,
     nbVues: 55,
-    score: 0,
+    score: 6000,
     subtitle: '',
     avis: [
       {
@@ -254,7 +254,7 @@ export const VIDEOS: IVideo[] = [
     categories: ['Voyager'],
     auteur: {
       nom: 'Une curieuse',
-      utilisateur: '',
+      utilisateur: 'test@test.ca',
       verifie: true,
       avatar: '',
       coordonnees: {},
@@ -263,7 +263,7 @@ export const VIDEOS: IVideo[] = [
     datePublication: '15 octobre 2015',
     duree: 3,
     nbVues: 125,
-    score: 0,
+    score: -7500,
     subtitle: 'st',
     avis: [
       {
@@ -293,7 +293,7 @@ export const VIDEOS: IVideo[] = [
     categories: ['Film'],
     auteur: {
       nom: 'Une curieuse',
-      utilisateur: '',
+      utilisateur: 'test@test.ca',
       avatar: '',
       coordonnees: {},
       auteurDescription: '',
@@ -315,7 +315,7 @@ export const VIDEOS: IVideo[] = [
     categories: ['Photographie'],
     auteur: {
       nom: 'Une curieuse',
-      utilisateur: '',
+      utilisateur: 'test@test.ca',
       verifie: true,
       avatar: '',
       coordonnees: {},
@@ -324,7 +324,7 @@ export const VIDEOS: IVideo[] = [
     datePublication: '15 octobre 2015',
     duree: 15,
     nbVues: 2000,
-    score: 0,
+    score: 10000,
     subtitle: 'cc',
     avis: [
       {
