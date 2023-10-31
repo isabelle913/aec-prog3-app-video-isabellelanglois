@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { VIDEOS } from './mocks/mock-videos';
 
@@ -7,24 +7,23 @@ import { VIDEOS } from './mocks/mock-videos';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   videos = VIDEOS;
   utilisateur = this.videos[0].auteur;
   isSmallScreen = false;
   isLargeScreen = false;
   drawerToggle = false;
 
-  /*
- // TODO ?? question pour avoir valeur réactive autre qu'installer une librairie
+  // TODO ?? question pour avoir valeur réactive autre qu'installer une librairie
   // petit menu si drawerToggle = false et  isSmallScreen = false
   // tentative 1
-  // isSmallMenuOpen = !this.drawerToggle && !this.isSmallScreen ? true : false;
+  isSmallMenuOpen = false;
   // tentative 2
   // https://stackoverflow.com/questions/43710642/does-angular-have-the-computed-property-feature-like-in-vue-js
   // hasSmallMenuOpen() {
   //   return !this.drawerToggle && !this.isSmallScreen ? true : false;
   // }
-*/
+
   onToggleDrawer() {
     this.drawerToggle = !this.drawerToggle;
   }
@@ -38,4 +37,9 @@ export class AppComponent {
       });
   }
   // https://medium.com/@pjlamb12/angular-cdks-breakpointobserver-b75df04a1cc2
+
+  ngOnInit() {
+    this.isSmallMenuOpen =
+      !this.drawerToggle && !this.isSmallScreen ? true : false;
+  }
 }
