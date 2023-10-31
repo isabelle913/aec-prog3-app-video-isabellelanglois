@@ -4,8 +4,16 @@
 
   <mat-chip-option class="card__duree">{{ video?.duree }}</mat-chip-option>
 
-  <mat-card-header class="flex flex-col items-start">
-    <mat-card-title>{{ video?.nom }}</mat-card-title>
+  <div *ngIf="video" class="card__honor">
+    <img *ngIf=" video.score > 5000" [src]="imgStar" alt="Icône star">
+    <img *ngIf="isStarActive()" [src]="imgStar" alt="Icône star">
+    <img *ngIf="isCitrusActive()" [src]="imgCitron" alt="Petit citron">
+  </div>
+
+
+  <mat-card-header>
+    <mat-card-title [ngClass]="{'text-green': isStarActive(), 'text-red': isCitrusActive()}">{{ video?.nom
+      }}</mat-card-title>
   </mat-card-header>
 
   <mat-card-content>
