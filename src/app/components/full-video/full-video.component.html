@@ -8,7 +8,7 @@
         fontIcon="closed_caption" class="scale-150  text-white"></mat-icon>
       <mat-icon *ngIf="video.subtitle === 'st'" aria-hidden="false" aria-label="Icon subtitles" fontIcon="subtitles"
         class="scale-150 text-white"></mat-icon>
-      <mat-chip-option class="card__duree">{{ video?.duree }}</mat-chip-option>
+      <mat-chip-option class="card__duree">{{ video.duree }}</mat-chip-option>
     </div>
   </div>
 
@@ -56,19 +56,4 @@
       précédante</button>
   </div>
 </ng-template>
-
-<!--
-
-idée:
-
-- ajouter soit rien CC ou ST selon la valeur video.subtitle
-
-
-TODO voir exercice du dernier cours pour ce devoir et les autres cours afin de s'assurer de rien oublier
-
-    duree: 12,
-
-    subtitle: '',
-
-
- -->
+>
