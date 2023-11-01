@@ -288,7 +288,7 @@ export const VIDEOS: IVideo[] = [
     nom: 'Mario Bros the Movies',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
-    media: '',
+    media: 'https://picsum.photos/id/31/1500/850',
     code: 'C002',
     categories: ['Film'],
     auteur: {
