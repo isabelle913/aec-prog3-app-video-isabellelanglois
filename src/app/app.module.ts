@@ -63,7 +63,3 @@ import { InfoVideoComponent } from './components/utils/info-video/info-video.com
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
-// TODO corriger le footer / enlever le scroll
-// TODO fixer entête et menu
-// TODO Changer
