@@ -13,16 +13,7 @@ export class AppComponent implements OnInit {
   isSmallScreen = false;
   isLargeScreen = false;
   drawerToggle = false;
-
-  // TODO ?? question pour avoir valeur réactive autre qu'installer une librairie
-  // petit menu si drawerToggle = false et  isSmallScreen = false
-  // tentative 1
   isSmallMenuOpen = false;
-  // tentative 2
-  // https://stackoverflow.com/questions/43710642/does-angular-have-the-computed-property-feature-like-in-vue-js
-  // hasSmallMenuOpen() {
-  //   return !this.drawerToggle && !this.isSmallScreen ? true : false;
-  // }
 
   onToggleDrawer() {
     this.drawerToggle = !this.drawerToggle;

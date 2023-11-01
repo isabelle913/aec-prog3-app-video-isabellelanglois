@@ -1,4 +1,4 @@
-<app-header [utilisateur]="utilisateur">
+<app-header class="header" [utilisateur]="utilisateur">
   <div class="w-[50px] flex flex-row justify-center ml-1">
     <button type="button" mat-icon-button (click)="drawer.toggle(); onToggleDrawer()">
       <mat-icon>menu</mat-icon>
@@ -9,14 +9,17 @@
 <mat-drawer-container class="main-container" autosize>
 
   <mat-drawer #drawer class="sidenav" [mode]="isLargeScreen ? 'side' : 'over'">
-    <div class="flex flex-col justify-between h-screen">
+    <div class="flex flex-col justify-between h-5/6">
       <app-menu-std></app-menu-std>
       <app-footer></app-footer>
     </div>
   </mat-drawer>
 
   <div class="flex flex-row bg-white">
-    <app-menu-small *ngIf="!this.drawerToggle && !this.isSmallScreen"></app-menu-small>
+    <div *ngIf="!this.drawerToggle && !this.isSmallScreen" class="basis-20 shrink-0">
+      <app-menu-small class="fixed-menu"></app-menu-small>
+    </div>
+
 
     <div class="container mx-auto px-5">
       <router-outlet></router-outlet>
@@ -25,7 +28,4 @@
 
 </mat-drawer-container>
 
-
-<!-- TODO corriger le header qui se cache -->
-<!-- TODO corriger le la position du footer -->
 <!-- TODO remplacer l'image pour le vidéo qui n'a pas d'image -->
