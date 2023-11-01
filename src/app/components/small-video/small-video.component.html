@@ -5,20 +5,21 @@
   <mat-chip-option class="card__duree">{{ video?.duree }}</mat-chip-option>
 
   <div *ngIf="video" class="card__honor">
-    <img *ngIf=" video.score > 5000" [src]="imgStar" alt="Icône star">
-    <img *ngIf="isStarActive()" [src]="imgStar" alt="Icône star">
-    <img *ngIf="isCitrusActive()" [src]="imgCitron" alt="Petit citron">
+    <img *ngIf=" video.score >= 5000" [src]="imgStar" alt="Icône star">
+    <img *ngIf="video.score <= -5000" [src]="imgCitron" alt="Petit citron">
   </div>
 
 
   <mat-card-header>
-    <mat-card-title [ngClass]="{'text-green': isStarActive(), 'text-red': isCitrusActive()}">{{ video?.nom
+    <mat-card-title
+      [ngClass]="{'text-green': video && video.score >= 5000, 'text-red': video && video.score <= -5000 }">{{ video?.nom
       }}</mat-card-title>
   </mat-card-header>
 
   <mat-card-content>
     <app-utilisateur [utilisateur]=" video?.auteur"></app-utilisateur>
     <p class="pt-4">{{ video?.nbVues }} visionnements - publié {{ video?.datePublication }}</p>
+    <p>{{ video?.score }}</p>
   </mat-card-content>
 
 </mat-card>
