@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgIf } from '@angular/common';
 import { LayoutModule } from '@angular/cdk/layout';
+import { FormsModule } from '@angular/forms';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,6 +12,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSliderModule } from '@angular/material/slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +33,7 @@ import { CategoriesComponent } from './components/utils/categories/categories.co
 import { UtilisateurComponent } from './components/utils/utilisateur/utilisateur.component';
 import { ThumbsComponent } from './components/utils/thumbs/thumbs.component';
 import { InfoVideoComponent } from './components/utils/info-video/info-video.component';
+import { FormulaireVideoComponent } from './components/formulaire-video/formulaire-video.component';
 
 @NgModule({
   declarations: [
@@ -42,12 +50,14 @@ import { InfoVideoComponent } from './components/utils/info-video/info-video.com
     UtilisateurComponent,
     ThumbsComponent,
     InfoVideoComponent,
+    FormulaireVideoComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     NgIf,
     LayoutModule,
+    FormsModule,
 
     MatSidenavModule,
     MatButtonModule,
@@ -56,6 +66,12 @@ import { InfoVideoComponent } from './components/utils/info-video/info-video.com
     MatCardModule,
     MatChipsModule,
     MatDividerModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSliderModule,
 
     AppRoutingModule,
   ],
