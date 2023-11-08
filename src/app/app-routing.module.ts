@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FullVideoComponent } from './components/full-video/full-video.component';
 import { ListeVideoComponent } from './components/liste-video/liste-video.component';
+import { FormulaireVideoComponent } from './components/formulaire-video/formulaire-video.component';
 
 const routes: Routes = [
   { path: 'videos', component: ListeVideoComponent },
   { path: 'video/:code', component: FullVideoComponent },
+  { path: 'add', component: FormulaireVideoComponent },
   { path: '', redirectTo: '/videos', pathMatch: 'full' },
   { path: '**', redirectTo: '/videos' },
 ];
