@@ -2,7 +2,6 @@ import { IVideo } from '../interfaces/ivideo';
 
 export const VIDEOS: IVideo[] = [
   {
-    id: 1,
     nom: 'Visiter la côte Nord',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
@@ -31,7 +30,6 @@ export const VIDEOS: IVideo[] = [
     ],
   },
   {
-    id: 2,
     nom: 'Apprendre le JavaScript',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
@@ -52,7 +50,6 @@ export const VIDEOS: IVideo[] = [
     subtitle: '',
   },
   {
-    id: 3,
     nom: 'Photographier des chutes',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
@@ -91,7 +88,6 @@ export const VIDEOS: IVideo[] = [
     ],
   },
   {
-    id: 4,
     nom: 'Les plus beaux étalons',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
@@ -130,7 +126,6 @@ export const VIDEOS: IVideo[] = [
     ],
   },
   {
-    id: 5,
     nom: 'Apprendre Angular',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
@@ -168,7 +163,6 @@ export const VIDEOS: IVideo[] = [
     ],
   },
   {
-    id: 6,
     nom: 'Apprendre Photoshop',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
@@ -207,7 +201,6 @@ export const VIDEOS: IVideo[] = [
     ],
   },
   {
-    id: 7,
     nom: 'Nouveautés cinéma',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
@@ -245,7 +238,6 @@ export const VIDEOS: IVideo[] = [
     ],
   },
   {
-    id: 8,
     nom: 'Visiter Disneyland',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
@@ -284,11 +276,10 @@ export const VIDEOS: IVideo[] = [
     ],
   },
   {
-    id: 9,
     nom: 'Mario Bros the Movies',
     description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
-    media: 'https://picsum.photos/id/31/1500/850',
+      'Lorem ipsum dolor sit, amet  consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
+    media: './assets/img/super-mario-bros-movie.jpg',
     code: 'C002',
     categories: ['Film'],
     auteur: {
@@ -306,7 +297,6 @@ export const VIDEOS: IVideo[] = [
     avis: [],
   },
   {
-    id: 10,
     nom: 'Sortie photo de nuit',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',

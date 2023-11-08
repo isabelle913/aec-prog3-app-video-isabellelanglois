@@ -2,7 +2,6 @@ import { IAuteur } from './iauteur';
 import { IAvis } from './iavis';
 
 export interface IVideo {
-  id: number;
   nom: string;
   description: string;
   media: string;
