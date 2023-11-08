@@ -12,8 +12,13 @@ export const LINKS: ILink[] = [
     to: '/',
   },
   {
+    icon: 'add',
+    name: 'Ajouter vidéo',
+    to: '/add',
+  },
+  {
     icon: 'history',
     name: 'Historique',
-    to: '/)',
+    to: '/',
   },
 ];
