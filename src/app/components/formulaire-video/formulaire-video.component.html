@@ -1,0 +1,63 @@
+<form class="example-form">
+
+  <mat-form-field>
+    <mat-label>Nom</mat-label>
+    <input matInput name="nom" [(ngModel)]="newVideo.nom">
+  </mat-form-field>
+
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Description</mat-label>
+    <textarea matInput name="description" [(ngModel)]="newVideo.description"></textarea>
+  </mat-form-field>
+
+
+  <!-- <mat-form-field class="example-chip-list">
+    <mat-label>Catégories</mat-label>
+    <mat-chip-grid #chipGrid aria-label="Categories selection">
+      <mat-chip-row *ngFor="let category of newVideo.categories" (removed)="remove(category)">
+        {{category}}
+        <button matChipRemove [attr.aria-label]="'remove ' + category">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip-row>
+    </mat-chip-grid>
+    <input matInput name="nom" [(ngModel)]="newVideo.nom"> -->
+  <!-- <input placeholder="New Fruit..." #fruitInput [formControl]="fruitCtrl" [matChipInputFor]="chipGrid"
+      [matAutocomplete]="auto" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="add($event)" />
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+      <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+        {{fruit}}
+      </mat-option>
+    </mat-autocomplete> -->
+  <!-- </mat-form-field> -->
+
+  <mat-form-field>
+    <mat-label>Code</mat-label>
+    <input matInput name="code" [(ngModel)]="newVideo.code">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" name="date" [(ngModel)]="newVideo.datePublication">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+
+  <mat-slider>
+    <input matSliderThumb name="duree" [(ngModel)]="newVideo.duree">
+  </mat-slider>
+
+
+</form>
+<p>Ce que j'inscrit: </p>
+<p>Nom: {{ newVideo.nom }}</p>
+<p>Description: {{ newVideo.description }}</p>
+<p>Catérgories: {{ newVideo.categories }}</p>
+<p>Code: {{ newVideo.code }}</p>
+<p>Date de publication: {{ newVideo.datePublication }}</p>
+<p>Durée: {{ newVideo.duree }}</p>
+<p>Sous-titre: {{ newVideo.subtitle }}</p>
