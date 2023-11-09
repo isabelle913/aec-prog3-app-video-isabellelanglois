@@ -9,10 +9,10 @@ import { IVideo } from 'src/app/interfaces/ivideo';
 })
 export class SmallVideoComponent {
   @Input() video?: IVideo;
-  mediaDefaut = '../../../assets/logo_300-170.png';
+  mediaDefaut = './assets/logo_300-170.png';
   imgCitron =
     'https://www.arnaques-infos.org/images/pixabay-bb4f3cce9a2f4650_l7y9x3p4.png';
-  imgStar = '../../../assets/star-70x72.png';
+  imgStar = './assets/star-70x72.png';
 
   constructor(private router: Router) {}
 
