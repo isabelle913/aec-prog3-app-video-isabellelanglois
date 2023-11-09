@@ -39,6 +39,7 @@ export const VIDEOS: IVideo[] = [
     auteur: {
       nom: 'Une curieuse',
       utilisateur: 'test@test.ca',
+      verifie: false,
       avatar: '',
       coordonnees: {},
       auteurDescription: '',
@@ -135,6 +136,7 @@ export const VIDEOS: IVideo[] = [
     auteur: {
       nom: 'Une curieuse',
       utilisateur: 'test@test.ca',
+      verifie: false,
       avatar: '',
       coordonnees: {},
       auteurDescription: '',
@@ -210,6 +212,7 @@ export const VIDEOS: IVideo[] = [
     auteur: {
       nom: 'Une curieuse',
       utilisateur: 'test@test.ca',
+      verifie: false,
       avatar: '',
       coordonnees: {},
       auteurDescription: '',
@@ -285,6 +288,7 @@ export const VIDEOS: IVideo[] = [
     auteur: {
       nom: 'Une curieuse',
       utilisateur: 'test@test.ca',
+      verifie: false,
       avatar: '',
       coordonnees: {},
       auteurDescription: '',
