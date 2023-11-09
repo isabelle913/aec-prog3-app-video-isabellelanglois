@@ -5,7 +5,7 @@ export const VIDEOS: IVideo[] = [
     nom: 'Visiter la côte Nord',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
-    media: 'https://picsum.photos/id/13/1500/850',
+    media: './assets/img/cote-nord.jpg',
     code: 'V001',
     categories: ['Voyager', 'Québec'],
     auteur: {
@@ -33,7 +33,7 @@ export const VIDEOS: IVideo[] = [
     nom: 'Apprendre le JavaScript',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
-    media: 'https://picsum.photos/id/48/1500/850',
+    media: './assets/img/javascript.jpg',
     code: 'L001',
     categories: ['Apprendre', 'Programmation', 'JavaScript'],
     auteur: {
@@ -53,7 +53,7 @@ export const VIDEOS: IVideo[] = [
     nom: 'Photographier des chutes',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
-    media: 'https://picsum.photos/id/15/1500/850',
+    media: './assets/img/chute-1.jpg',
     code: 'P001',
     categories: ['Photographie', 'Apprendre'],
     auteur: {
@@ -91,7 +91,7 @@ export const VIDEOS: IVideo[] = [
     nom: 'Les plus beaux étalons',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
-    media: 'https://picsum.photos/id/169/1500/850',
+    media: './assets/img/cheval.jpg',
     code: 'A001',
     categories: ['Chevaux', 'Règne animal'],
     auteur: {
@@ -129,7 +129,7 @@ export const VIDEOS: IVideo[] = [
     nom: 'Apprendre Angular',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
-    media: 'https://picsum.photos/id/201/1500/850',
+    media: './assets/img/angular.jpg',
     code: 'L002',
     categories: ['Apprendre', 'Programmation', 'Angular'],
     auteur: {
@@ -166,7 +166,7 @@ export const VIDEOS: IVideo[] = [
     nom: 'Apprendre Photoshop',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
-    media: 'https://picsum.photos/id/91/1500/850',
+    media: './assets/img/apprendre-phto.jpg',
     code: 'L003',
     categories: ['Apprendre', 'Photoshop', 'Photographie'],
     auteur: {
@@ -204,7 +204,7 @@ export const VIDEOS: IVideo[] = [
     nom: 'Nouveautés cinéma',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
-    media: 'https://picsum.photos/id/208/1500/850',
+    media: './assets/img/cinema.jpg',
     code: 'C001',
     categories: ['Cinéma'],
     auteur: {
@@ -241,7 +241,7 @@ export const VIDEOS: IVideo[] = [
     nom: 'Visiter Disneyland',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
-    media: 'https://picsum.photos/id/342/1500/850',
+    media: './assets/img/disney.jpg',
     code: 'V002',
     categories: ['Voyager'],
     auteur: {
@@ -300,7 +300,7 @@ export const VIDEOS: IVideo[] = [
     nom: 'Sortie photo de nuit',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
-    media: 'https://picsum.photos/id/58/1500/850',
+    media: './assets/img/photo-nuit.jpg',
     code: 'P002',
     categories: ['Photographie'],
     auteur: {
