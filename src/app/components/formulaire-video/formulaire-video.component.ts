@@ -35,4 +35,8 @@ export class FormulaireVideoComponent {
       this.announcer.announce(`Removed ${category}`);
     }
   }
+
+  newVideoSubmit() {
+    console.log(this.newVideo);
+  }
 }
