@@ -1,1 +1,6 @@
-<p>Recherche</p>
+<mat-form-field appearance="fill">
+  <mat-label>Recherche</mat-label>
+  <input matInput placeholder="Placeholder" [(ngModel)]="searchWord">
+  <mat-icon matSuffix>search</mat-icon>
+  <mat-hint>{{ searchWord }}</mat-hint>
+</mat-form-field>

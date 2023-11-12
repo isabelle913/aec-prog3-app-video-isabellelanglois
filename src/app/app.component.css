@@ -2,6 +2,7 @@
   position: sticky;
   top: 0px;
   z-index: 1000;
+  margin-top: 25px;
 }
 .fixed-menu {
   position: fixed;
