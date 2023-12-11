@@ -23,9 +23,11 @@ export class FormulaireVideoComponent {
     subtitle: '',
     avis: [],
   };
+  dureeString: string = '0';
 
   announcer = inject(LiveAnnouncer);
 
+  // chip
   remove(category: string): void {
     const index = this.newVideo.categories.indexOf(category);
 
@@ -36,7 +38,25 @@ export class FormulaireVideoComponent {
     }
   }
 
+  // submit
   newVideoSubmit() {
     console.log(this.newVideo);
+  }
+
+  // slider
+  formatLabel(value: number): string {
+    const min = Math.floor(value / 60);
+    const sec =
+      value - min * 60 === 0
+        ? '00'
+        : value - min * 60 < 10
+        ? `0${value - min * 60}`
+        : value - min * 60;
+
+    console.log('Value: ', value, 'min: ', min, 'sec: ', sec);
+
+    this.dureeString = `${min}:${sec}`;
+
+    return this.dureeString;
   }
 }

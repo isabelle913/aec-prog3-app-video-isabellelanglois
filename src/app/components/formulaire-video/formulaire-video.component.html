@@ -53,10 +53,12 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
-
-      <mat-slider class="col-span-12">
+      <!-- step="60" showTickMarks -->
+      <mat-slider class="col-span-12" min="0" max="1800" discrete [displayWith]="formatLabel">
         <input matSliderThumb name="duree" [(ngModel)]="newVideo.duree">
       </mat-slider>
+      <!-- <p>Durée: {{ formatLabel }}</p> -->
+      <p>Durée: {{ dureeString }}</p>
 
       <div class="col-span-12">Sous titres : Select (options : Aucun, Sous titres, Sous titrage pour sourds et
         malentendants)</div>
