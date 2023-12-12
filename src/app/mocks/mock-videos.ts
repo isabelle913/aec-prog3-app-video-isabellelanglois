@@ -2,13 +2,17 @@ import { IVideo } from '../interfaces/ivideo';
 
 export const VIDEOS: IVideo[] = [
   {
-    nom: 'Visiter la côte Nord',
+    //id
+    nom: 'Visiter la côte Nord', // nom VARCHAR(50)
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
+    // description text
     media: './assets/img/cote-nord.jpg',
-    code: 'V001',
-    categories: ['Voyager', 'Québec'],
+    // media text
+    code: 'V001', //code VARCHAR(10) // TODO ??? code vs id
+    categories: ['Voyager', 'Québec'], // TODO
     auteur: {
+      // TODO
       nom: 'Une curieuse',
       utilisateur: 'test@test.ca',
       verifie: true,
@@ -16,14 +20,17 @@ export const VIDEOS: IVideo[] = [
       coordonnees: {},
       auteurDescription: '',
     },
-    datePublication: '15 octobre 2015',
-    duree: 15,
-    nbVues: 15,
-    score: 5,
-    subtitle: '', // facultatif
+    datePublication: '15 octobre 2015', // date_publication Date
+    duree: 15, //duree int (6)
+    nbVues: 15, // nb_vues int(11)
+    score: 5, // score int(11)
+    subtitle: '', // subtitle VARCHAR(10)
     avis: [
       {
-        note: 9,
+        //id
+        //id_video
+        note: 9, // note int(2)
+        // commentaire text
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque. ',
       },
