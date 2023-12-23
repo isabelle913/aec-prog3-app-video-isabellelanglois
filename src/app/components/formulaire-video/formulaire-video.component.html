@@ -3,63 +3,77 @@
 
   <form>
 
-    <p class="text-center text-4xl">Ajouter une vidéo</p>
+    <p class="text-center text-4xl py-6">Ajouter une vidéo</p>
 
-    <div class="grid grid-cols-12 ">
+    <div class="grid grid-cols-12 gap-y-6">
 
-      <mat-form-field class="col-span-12">
+      <!-- Nom -->
+      <mat-form-field class="col-span-12 md:col-span-8">
         <mat-label>Nom</mat-label>
         <input matInput name="nom" [(ngModel)]="newVideo.nom">
       </mat-form-field>
 
-
+      <!-- Description -->
       <mat-form-field class="col-span-12">
         <mat-label>Description</mat-label>
         <textarea matInput name="description" [(ngModel)]="newVideo.description"></textarea>
       </mat-form-field>
 
-      <div class="col-span-12">Mettre les chips / catégories</div>
-
+      <!-- Catégories -->
       <mat-form-field class="col-span-12">
+        <mat-label>Mettre les chips / catégories</mat-label>
+        <input matInput name="categories" [(ngModel)]="newVideo.categories">
+      </mat-form-field>
+
+      <!-- Sous-titres -->
+      <mat-form-field class="col-span-12">
+        <mat-label>Sous-titre</mat-label>
+        <mat-select [(value)]="newVideo.subtitle">
+          <mat-option *ngFor="let subtitle of subtitles" [value]="subtitle.value">
+            {{subtitle.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Durée -->
+      <div class="col-span-12 pb-6 md:col-span-6">
+        <p class="text-lg pl-2 md:pl-4">Durée: {{ formatLabel(newVideo.duree) }}</p>
+        <div class="px-2 md:px-4">
+          <mat-slider class="slider-duree" min="0" max="1800" discrete [displayWith]="formatLabel">
+            <input matSliderThumb name="duree" [(ngModel)]="newVideo.duree">
+          </mat-slider>
+        </div>
+
+      </div>
+
+      <!-- Code -->
+      <mat-form-field class="col-span-5 md:col-span-3 md:row-start-1 md:col-start-10">
         <mat-label>Code</mat-label>
         <input matInput name="code" [(ngModel)]="newVideo.code">
       </mat-form-field>
 
-      <mat-form-field class="col-span-12">
+      <!-- Date de publication -->
+      <mat-form-field class="col-span-5 col-start-8">
         <mat-label>Date de publication</mat-label>
         <input matInput [matDatepicker]="picker" name="date" [(ngModel)]="newVideo.datePublication">
-        <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
-      <!-- step="60" showTickMarks -->
-      <mat-slider class="col-span-12" min="0" max="1800" discrete [displayWith]="formatLabel">
-        <input matSliderThumb name="duree" [(ngModel)]="newVideo.duree">
-      </mat-slider>
-      <!-- <p>Durée: {{ formatLabel }}</p> -->
-      <p>Durée: {{ dureeString }}</p>
 
-      <div class="col-span-12">Sous titres : Select (options : Aucun, Sous titres, Sous titrage pour sourds et
-        malentendants)</div>
+
+
+
+
 
     </div>
 
-    <div class="col-span-12 flex justify-end">
+    <div class="col-span-12 flex justify-center md:justify-end mt-6">
       <button class="bg-blue-500 rounded-lg px-20 py-5 text-white text-xl focus:scale-110 hover:scale-110 mr-6"
         (click)="newVideoSubmit()">Soumettre</button>
     </div>
 
 
   </form>
-  <p>Ce que j'inscrit: </p>
-  <p>Nom: {{ newVideo.nom }}</p>
-  <p>Description: {{ newVideo.description }}</p>
-  <p>Média: </p>
-  <p>Catérgories: {{ newVideo.categories }}</p>
-  <p>Code: {{ newVideo.code }}</p>
-  <p>Date de publication: {{ newVideo.datePublication }}</p>
-  <p>Durée: {{ newVideo.duree }}</p>
-  <p>Sous-titre: {{ newVideo.subtitle }}</p>
 
 </div>

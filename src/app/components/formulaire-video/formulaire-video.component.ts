@@ -1,9 +1,12 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { IVideo } from 'src/app/interfaces/ivideo';
 import { AUTEURS } from 'src/app/mocks/mock-auteurs';
-import { LiveAnnouncer } from '@angular/cdk/a11y';
 
-// chip autocomplete
+// aelect
+interface ISubtitle {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-formulaire-video',
@@ -22,24 +25,23 @@ export class FormulaireVideoComponent {
     duree: 0,
     nbVues: 0, // 0 en partant
     score: 0, // 0 en partant
-    subtitle: '',
+    subtitle: 'CC',
     avis: [],
   };
   dureeString: string = '0';
 
-  announcer = inject(LiveAnnouncer);
-
-  // chip autocomplete
+  // select
+  subtitles: ISubtitle[] = [
+    { value: 'none', viewValue: 'Aucun' },
+    { value: 'ST', viewValue: 'Sous-titres' },
+    { value: 'CC', viewValue: 'Sous-titrage pour sourds et malentendants' },
+  ];
 
   // slider
+  // prettier-ignore
   formatLabel(value: number): string {
     const min = Math.floor(value / 60);
-    const sec =
-      value - min * 60 === 0
-        ? '00'
-        : value - min * 60 < 10
-        ? `0${value - min * 60}`
-        : value - min * 60;
+    const sec = value - min * 60 === 0 ? '00' : value - min * 60 < 10 ? `0${value - min * 60}` : value - min * 60;
 
     console.log('Value: ', value, 'min: ', min, 'sec: ', sec);
 

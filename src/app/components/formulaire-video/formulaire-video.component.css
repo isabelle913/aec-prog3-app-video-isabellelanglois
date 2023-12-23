@@ -4,3 +4,7 @@
   margin: 30px auto;
   padding: 20px;
 }
+.slider-duree,
+.select-subtitle {
+  width: 100%;
+}
