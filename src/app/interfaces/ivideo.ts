@@ -13,6 +13,7 @@ export interface IVideo {
   duree: number; // duree int (6)
   nbVues: number; // nb_vue default 0 int(11)
   score: number; // score default 0 int(11)
-  subtitle?: string; // subtitle VARCHAR(10)
+  subtitle?: string; // subtitle VARCHAR(10)  cours 6 -> CC (Closed caption) ou ST (subtitles)
+  // cours 9 -> Aucun, Sous-titre ST, Sous-titrage pour sourd et malentendants CC
   avis?: IAvis[]; // table -> avis: id (int), id_video (int), description? (text), note int(2)
 }
