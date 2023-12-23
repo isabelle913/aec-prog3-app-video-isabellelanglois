@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgIf } from '@angular/common';
 import { LayoutModule } from '@angular/cdk/layout';
 import { FormsModule } from '@angular/forms';
+// import { FormsModule, FormControl } from '@angular/forms'; // TODO ?? dès que j'ajoute FormControl ca brise mat-form-field dans component formulaire (chip autocomplete + date avec moment.js)
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,6 +19,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -72,6 +74,7 @@ import { FormulaireVideoComponent } from './components/formulaire-video/formulai
     MatDatepickerModule,
     MatNativeDateModule,
     MatSliderModule,
+    MatSelectModule,
 
     AppRoutingModule,
   ],
