@@ -7,7 +7,7 @@ export interface IVideo {
   description: string; // description text
   media: string; // media text
   code: string; //code VARCHAR(10) // TODO ??? code vs id
-  categories: string[]; // table -> categories: id (int), id_video (int), categorie (VARCHAR20)
+  categories: string[]; // table -> categories: id (int), id_video (int), categorie (VARCHAR20) ou une liste fixe et un champ dans table videos_catégories
   auteur: IAuteur;
   datePublication: string; // date_publication Date
   duree: number; // duree int (6)

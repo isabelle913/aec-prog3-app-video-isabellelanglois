@@ -1,17 +1,24 @@
 <div class="container-form bg-blue-50 rounded-lg">
 
 
-  <form>
+  <form (ngSubmit)="newVideoSubmit()" #videoForm="ngForm">
 
     <p class="text-center text-4xl py-6">Ajouter une vidéo</p>
 
     <div class="grid grid-cols-12 gap-y-6">
 
       <!-- Nom -->
-      <mat-form-field class="col-span-12 md:col-span-8">
-        <mat-label>Nom</mat-label>
-        <input matInput name="nom" [(ngModel)]="newVideo.nom">
-      </mat-form-field>
+      <div class="col-span-12 md:col-span-8">
+        <mat-form-field class="full-width">
+          <mat-label>Nom</mat-label>
+          <input matInput name="nom" [(ngModel)]="newVideo.nom" minlength="3" maxlength="50" required #nom="ngModel">
+          <!-- <mat-error *ngIf="nom.invalid && (nom.dirty || nom.touched)">Ce champ est requis</mat-error> -->
+          <mat-error *ngIf="nom.errors?.['required']">Ce champ est requis</mat-error>
+          <mat-error *ngIf="nom.errors?.['minlength']">Doit contenir plus de 3 caractères</mat-error>
+          <mat-error *ngIf="nom.errors?.['maxlength']">Doit contenir un maximun de 50 caractères</mat-error>
+        </mat-form-field>
+
+      </div>
 
       <!-- Description -->
       <mat-form-field class="col-span-12">
@@ -19,14 +26,29 @@
         <textarea matInput name="description" [(ngModel)]="newVideo.description"></textarea>
       </mat-form-field>
 
-      <!-- Catégories -->
-      <mat-form-field class="col-span-12">
-        <mat-label>Mettre les chips / catégories</mat-label>
-        <input matInput name="categories" [(ngModel)]="newVideo.categories">
+      <!-- TODO ?? je ne trouve pas de multiple select en template driven -->
+      <mat-form-field class="col-span-12 md:col-span-6">
+        <mat-label>Choisir les catégories appropriées:</mat-label>
+        <mat-chip-grid #chipGridCategories>
+          <mat-chip-row *ngFor="let categorie of newVideo.categories; index as i" (removed)="remove(i)">
+            {{categorie}}
+            <button matChipRemove>
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip-row>
+        </mat-chip-grid>
+        <input placeholder="Ajouter une catégorie..." name="categories" [(ngModel)]="categorie_input" #categorieInput
+          [matChipInputFor]="chipGridCategories" [matAutocomplete]="auto" (ngModelChange)="filtrer()" />
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="ajouter($event)">
+          <mat-option *ngFor="let categorie of categoriesFiltrees" [value]="categorie">
+            {{categorie}}
+          </mat-option>
+        </mat-autocomplete>
       </mat-form-field>
+      <!-- minimun 1 catégorie -->
 
       <!-- Sous-titres -->
-      <mat-form-field class="col-span-12">
+      <mat-form-field class="col-span-12 md:col-span-5 md:col-start-8">
         <mat-label>Sous-titre</mat-label>
         <mat-select [(value)]="newVideo.subtitle">
           <mat-option *ngFor="let subtitle of subtitles" [value]="subtitle.value">
@@ -39,12 +61,15 @@
       <div class="col-span-12 pb-6 md:col-span-6">
         <p class="text-lg pl-2 md:pl-4">Durée: {{ formatLabel(newVideo.duree) }}</p>
         <div class="px-2 md:px-4">
-          <mat-slider class="slider-duree" min="0" max="1800" discrete [displayWith]="formatLabel">
-            <input matSliderThumb name="duree" [(ngModel)]="newVideo.duree">
+          <mat-slider class="slider-duree" min="1" max="1800" discrete [displayWith]="formatLabel">
+            <input matSliderThumb name="duree" [(ngModel)]="newVideo.duree" #duree="ngModel" min="1" max="1800">
+            <mat-error *ngIf="duree.errors?.['required']">Ce champ est requis</mat-error>
+            <mat-error *ngIf="duree.errors?.['minlength']">Doit contenir plus de 3 caractères</mat-error>
+            <mat-error *ngIf="duree.errors?.['maxlength']">Doit contenir un maximun de 50 caractères</mat-error>
           </mat-slider>
         </div>
-
       </div>
+      <!-- min 1 sec max je décide -->
 
       <!-- Code -->
       <mat-form-field class="col-span-5 md:col-span-3 md:row-start-1 md:col-start-10">
@@ -55,24 +80,23 @@
       <!-- Date de publication -->
       <mat-form-field class="col-span-5 col-start-8">
         <mat-label>Date de publication</mat-label>
-        <input matInput [matDatepicker]="picker" name="date" [(ngModel)]="newVideo.datePublication">
+        <input matInput [min]="minDate" [matDatepicker]="picker" name="date" [(ngModel)]="newVideo.datePublication"
+          required="" #datePublication="ngModel">
+        <mat-error *ngIf="datePublication.errors?.['required']">Ce champ est requis</mat-error>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
-
-
-
-
-
-
+      <!-- >= date du jour -->
+      <!-- TODO ?? comment faire validation personnalisé ? -->
 
     </div>
 
     <div class="col-span-12 flex justify-center md:justify-end mt-6">
-      <button class="bg-blue-500 rounded-lg px-20 py-5 text-white text-xl focus:scale-110 hover:scale-110 mr-6"
-        (click)="newVideoSubmit()">Soumettre</button>
+      <button type="submit"
+        class="bg-blue-500 rounded-lg px-20 py-5 text-white text-xl focus:scale-110 hover:scale-110 mr-6"
+        [disabled]="!videoForm.form.valid">Soumettre</button>
     </div>
-
+    <!--TODO corriger look when disabled -->
 
   </form>
 

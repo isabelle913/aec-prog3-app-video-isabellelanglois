@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IVideo } from 'src/app/interfaces/ivideo';
 import { AUTEURS } from 'src/app/mocks/mock-auteurs';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 
 // aelect
 interface ISubtitle {
@@ -19,7 +20,7 @@ export class FormulaireVideoComponent {
     description: '',
     media: '',
     code: '',
-    categories: ['allo', 'Coucou'],
+    categories: [],
     auteur: AUTEURS[0],
     datePublication: '',
     duree: 0,
@@ -42,12 +43,53 @@ export class FormulaireVideoComponent {
   formatLabel(value: number): string {
     const min = Math.floor(value / 60);
     const sec = value - min * 60 === 0 ? '00' : value - min * 60 < 10 ? `0${value - min * 60}` : value - min * 60;
-
-    console.log('Value: ', value, 'min: ', min, 'sec: ', sec);
-
+    // console.log('Value: ', value, 'min: ', min, 'sec: ', sec);
     this.dureeString = `${min}:${sec}`;
-
     return this.dureeString;
+  }
+
+  // date picker
+  minDate: Date;
+
+  constructor() {
+    // date picker
+    this.minDate = new Date();
+    // Chip autocomplete
+    this.filtrer(); // Filtre au mounted
+  }
+
+  //chip autocmplete
+  categoriesListe: string[] = [
+    'Voyager',
+    'Québec',
+    'Apprendre',
+    'Programmation',
+    'JavaScript',
+    'Photographie',
+    'Chevaux',
+    'Règne animal',
+    'Angular',
+    'Photoshop',
+    'Cinéma',
+  ];
+  categoriesFiltrees: string[] = this.categoriesListe;
+  categoriesChoisis: string[] = []; // affiché dans les chips
+
+  categorie_input: string = '';
+
+  remove(index: number) {
+    this.newVideo.categories.splice(index, 1);
+  }
+  ajouter(event: MatAutocompleteSelectedEvent) {
+    if (!this.newVideo.categories.includes(event.option.viewValue)) {
+      this.newVideo.categories.push(event.option.viewValue);
+      this.categorie_input = '';
+    }
+  }
+  filtrer() {
+    this.categoriesFiltrees = this.categoriesFiltrees.filter((categorie) =>
+      categorie.toLowerCase().includes(this.categorie_input)
+    );
   }
 
   // submit
