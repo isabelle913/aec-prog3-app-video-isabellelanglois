@@ -285,7 +285,7 @@ export const VIDEOS: IVideo[] = [
       'Lorem ipsum dolor sit, amet  consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
     media: './assets/img/super-mario-bros-movie.jpg',
     code: 'C002',
-    categories: ['Film'],
+    categories: ['Cinéma'],
     auteur: {
       nom: 'Une curieuse',
       utilisateur: 'test@test.ca',
