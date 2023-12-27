@@ -34,8 +34,8 @@ export class FormulaireVideoComponent {
   // select
   subtitles: ISubtitle[] = [
     { value: 'none', viewValue: 'Aucun' },
-    { value: 'ST', viewValue: 'Sous-titres' },
-    { value: 'CC', viewValue: 'Sous-titrage pour sourds et malentendants' },
+    { value: 'st', viewValue: 'Sous-titres' },
+    { value: 'cc', viewValue: 'Sous-titrage pour sourds et malentendants' },
   ];
 
   // slider
