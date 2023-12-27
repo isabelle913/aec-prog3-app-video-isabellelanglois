@@ -2,7 +2,7 @@
 
   <img mat-card-image [src]="video?.media || mediaDefaut" [alt]="video?.nom" class="bg-slate-100">
 
-  <mat-chip-option class="card__duree">{{ video?.duree }}</mat-chip-option>
+  <mat-chip-option class="card__duree">{{ video?.duree || 0 | formatDuree }}</mat-chip-option>
 
   <div *ngIf="video" class="card__honor">
     <img *ngIf=" video.score >= 5000" [src]="imgStar" alt="Icône star">

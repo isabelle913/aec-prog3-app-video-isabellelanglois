@@ -35,6 +35,7 @@ import { UtilisateurComponent } from './components/utils/utilisateur/utilisateur
 import { ThumbsComponent } from './components/utils/thumbs/thumbs.component';
 import { InfoVideoComponent } from './components/utils/info-video/info-video.component';
 import { FormulaireVideoComponent } from './components/formulaire-video/formulaire-video.component';
+import { FormatDureePipe } from './pipes/format-duree.pipe';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { FormulaireVideoComponent } from './components/formulaire-video/formulai
     ThumbsComponent,
     InfoVideoComponent,
     FormulaireVideoComponent,
+    FormatDureePipe,
   ],
   imports: [
     BrowserModule,
