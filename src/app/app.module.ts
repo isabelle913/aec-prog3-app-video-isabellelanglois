@@ -4,7 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgIf } from '@angular/common';
 import { LayoutModule } from '@angular/cdk/layout';
 import { FormsModule } from '@angular/forms';
-// import { FormsModule, FormControl } from '@angular/forms'; // TODO ?? dès que j'ajoute FormControl ca brise mat-form-field dans component formulaire (chip autocomplete + date avec moment.js)
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
