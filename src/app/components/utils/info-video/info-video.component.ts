@@ -10,6 +10,7 @@ import { IVideo } from 'src/app/interfaces/ivideo';
 export class InfoVideoComponent {
   @Input() video?: IVideo;
   isLargerThen1024 = false;
+  // messageTootip: string = `${this.video?.nbVues || 0 | i18nPlural: {'=0': 'Aucun visionnement', '=1': 'visionnement', 'other': 'visionnements'}}`;
 
   constructor(private observer: BreakpointObserver) {
     this.observer.observe(['(min-width: 1024px)']).subscribe((result) => {
