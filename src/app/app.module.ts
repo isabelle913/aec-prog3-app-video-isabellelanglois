@@ -19,6 +19,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +37,11 @@ import { ThumbsComponent } from './components/utils/thumbs/thumbs.component';
 import { InfoVideoComponent } from './components/utils/info-video/info-video.component';
 import { FormulaireVideoComponent } from './components/formulaire-video/formulaire-video.component';
 import { FormatDureePipe } from './pipes/format-duree.pipe';
+import { FormatVisionnementPipe } from './pipes/format-visionnement.pipe';
+import { FormatNumberLocalePipe } from './pipes/format-number-locale.pipe';
+import { DateDelayTodayPipe } from './pipes/date-delay-today.pipe';
+import { FilterScorePipe } from './pipes/filter-score.pipe';
+import { FilterCategoriesPipe } from './pipes/filter-categories.pipe';
 
 @NgModule({
   declarations: [
@@ -54,6 +60,11 @@ import { FormatDureePipe } from './pipes/format-duree.pipe';
     InfoVideoComponent,
     FormulaireVideoComponent,
     FormatDureePipe,
+    FormatVisionnementPipe,
+    FormatNumberLocalePipe,
+    DateDelayTodayPipe,
+    FilterScorePipe,
+    FilterCategoriesPipe,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +87,7 @@ import { FormatDureePipe } from './pipes/format-duree.pipe';
     MatNativeDateModule,
     MatSliderModule,
     MatSelectModule,
+    MatTooltipModule,
 
     AppRoutingModule,
   ],
