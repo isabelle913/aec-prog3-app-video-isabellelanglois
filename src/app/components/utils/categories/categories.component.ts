@@ -11,6 +11,8 @@ export class CategoriesComponent {
   @Input() stacked: boolean = false;
   @Input() color: boolean = false;
 
+  // console.log(this.categories)
+
   availableColors: string[] = ['primary', 'accent', 'warn'];
 
   randomColor() {
@@ -18,4 +20,5 @@ export class CategoriesComponent {
     const indexRandom = Math.trunc(Math.random() * 3) + 1;
     return this.availableColors[indexRandom];
   }
+  // TODO ne pas pouvoir les sélectionner/desélectionner des full vidéos
 }
