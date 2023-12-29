@@ -9,7 +9,7 @@ export const LINKS: ILink[] = [
   {
     icon: 'favorite',
     name: 'Favoris',
-    to: '/',
+    to: '/videos/favorite',
   },
   {
     icon: 'add',
