@@ -19,8 +19,8 @@ export const VIDEOS: IVideo[] = [
     },
     datePublication: '15 octobre 2015',
     duree: 4000, // TODO vérifier durée maximal dans BD
-    nbVues: 15,
-    score: 5,
+    nbVues: 15850698,
+    score: 15,
     subtitle: '',
     avis: [
       {
@@ -47,8 +47,8 @@ export const VIDEOS: IVideo[] = [
     },
     datePublication: '15 octobre 2015',
     duree: 243,
-    nbVues: 100,
-    score: 0,
+    nbVues: 2539,
+    score: 2000,
     subtitle: '',
   },
   {
@@ -68,7 +68,7 @@ export const VIDEOS: IVideo[] = [
     },
     datePublication: '15 octobre 2015',
     duree: 10375,
-    nbVues: 5,
+    nbVues: 55248,
     score: 0,
     subtitle: '',
     avis: [
@@ -106,7 +106,7 @@ export const VIDEOS: IVideo[] = [
     },
     datePublication: '15 octobre 2015',
     duree: 375,
-    nbVues: 1000,
+    nbVues: 799,
     score: 0,
     subtitle: '',
     avis: [
@@ -144,7 +144,7 @@ export const VIDEOS: IVideo[] = [
     },
     datePublication: '15 octobre 2015',
     duree: 24580,
-    nbVues: 1500,
+    nbVues: 15360000,
     score: 0,
     subtitle: '',
     avis: [
@@ -182,7 +182,7 @@ export const VIDEOS: IVideo[] = [
     },
     datePublication: '15 octobre 2015',
     duree: 120,
-    nbVues: 100,
+    nbVues: 18500,
     score: 0,
     subtitle: '',
     avis: [
@@ -220,7 +220,7 @@ export const VIDEOS: IVideo[] = [
     },
     datePublication: '15 octobre 2015',
     duree: 610,
-    nbVues: 55,
+    nbVues: 0,
     score: 6000,
     subtitle: '',
     avis: [
@@ -258,8 +258,8 @@ export const VIDEOS: IVideo[] = [
     },
     datePublication: '15 octobre 2015',
     duree: 30,
-    nbVues: 125,
-    score: -7500,
+    nbVues: 1,
+    score: -5000,
     subtitle: 'st',
     avis: [
       {
@@ -296,7 +296,7 @@ export const VIDEOS: IVideo[] = [
     },
     datePublication: '15 octobre 2015',
     duree: 60,
-    nbVues: 15,
+    nbVues: 1,
     score: 0,
     subtitle: 'st',
     avis: [],
@@ -316,9 +316,9 @@ export const VIDEOS: IVideo[] = [
       coordonnees: {},
       auteurDescription: '',
     },
-    datePublication: '15 octobre 2015',
+    datePublication: '2023-12-26',
     duree: 3600,
-    nbVues: 2000,
+    nbVues: 200058,
     score: 10000,
     subtitle: 'cc',
     avis: [

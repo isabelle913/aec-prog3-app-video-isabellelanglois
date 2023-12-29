@@ -18,8 +18,14 @@
 
   <mat-card-content>
     <app-utilisateur [utilisateur]=" video?.auteur"></app-utilisateur>
-    <p class="pt-4">{{ video?.nbVues }} visionnements - publié {{ video?.datePublication }}</p>
-    <p>{{ video?.score }}</p>
+    <!-- TODO vérifier si respect requis avec le projet 3 visionnement et score -->
+
+    <p class="pt-4 text-xs">{{ video?.nbVues || 0 | formatVisionnement }}
+      {{ video?.nbVues || 0 | i18nPlural: {'=0': 'Aucun visionnement', '=1': 'visionnement', 'other': 'visionnements'}
+      }}
+      - il y a {{ video?.datePublication || '' | dateDelayToday }}
+    </p>
+    <p>Score: {{ video?.score }}</p>
   </mat-card-content>
 
 </mat-card>
