@@ -8,7 +8,7 @@ import { FormulaireVideoComponent } from './components/formulaire-video/formulai
 const routes: Routes = [
   { path: 'videos', component: ListeVideoComponent },
   { path: 'videos/favorite', component: ListeVideoComponent },
-  { path: 'video/:code', component: FullVideoComponent },
+  { path: 'video/:id', component: FullVideoComponent },
   { path: 'add', component: FormulaireVideoComponent },
   { path: '', redirectTo: '/videos', pathMatch: 'full' },
   { path: '**', redirectTo: '/videos' },

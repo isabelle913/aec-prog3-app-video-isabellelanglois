@@ -18,7 +18,7 @@ export class SmallVideoComponent {
 
   goTo() {
     if (this.video) {
-      this.router.navigate(['/', 'video', this.video.code]);
+      this.router.navigate(['/', 'video', this.video.id]);
     }
   }
 }
