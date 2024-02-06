@@ -22,3 +22,5 @@ export class DateDelayTodayPipe implements PipeTransform {
     return str;
   }
 }
+
+// TODO est-ce que je peux utiliser int.NumberFormat ou int.DateTimeFormat dans ce projet? IL y en a un aussi pour le pluriel
