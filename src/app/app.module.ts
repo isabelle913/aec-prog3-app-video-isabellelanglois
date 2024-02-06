@@ -20,6 +20,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,6 +43,7 @@ import { FormatNumberLocalePipe } from './pipes/format-number-locale.pipe';
 import { DateDelayTodayPipe } from './pipes/date-delay-today.pipe';
 import { FilterScorePipe } from './pipes/filter-score.pipe';
 import { FilterCategoriesPipe } from './pipes/filter-categories.pipe';
+import { VideoService } from './services/video.service';
 
 @NgModule({
   declarations: [
@@ -90,8 +92,9 @@ import { FilterCategoriesPipe } from './pipes/filter-categories.pipe';
     MatTooltipModule,
 
     AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [VideoService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
