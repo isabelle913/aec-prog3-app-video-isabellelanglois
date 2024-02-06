@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { IVideo } from 'src/app/interfaces/ivideo';
 import { VIDEOS } from './mocks/mock-videos';
+import { VideoService } from 'src/app/services/video.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +10,9 @@ import { VIDEOS } from './mocks/mock-videos';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  videos = VIDEOS;
-  utilisateur = this.videos[0].auteur;
+  videosMock = VIDEOS;
+  videos: IVideo[] = [];
+  utilisateur = this.videosMock[0].auteur; // TODO remplacé videosMock // TODO faire un mock utilisateur
   isSmallScreen = false;
   isLargeScreen = false;
   drawerToggle = false;
@@ -19,7 +22,10 @@ export class AppComponent implements OnInit {
     this.drawerToggle = !this.drawerToggle;
   }
 
-  constructor(private observer: BreakpointObserver) {
+  constructor(
+    private observer: BreakpointObserver,
+    private videoService: VideoService
+  ) {
     this.observer
       .observe(['(max-width: 640px)', '(min-width: 1280px)'])
       .subscribe((result) => {
@@ -32,5 +38,13 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.isSmallMenuOpen =
       !this.drawerToggle && !this.isSmallScreen ? true : false;
+
+    // this.getVideos(); // TODO Pas nécessaire
+  }
+
+  getVideos(): void {
+    this.videoService.getVideos().subscribe((response) => {
+      this.videos = response;
+    });
   }
 }
