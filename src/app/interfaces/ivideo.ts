@@ -2,7 +2,7 @@ import { IAuteur } from './iauteur';
 import { IAvis } from './iavis';
 
 export interface IVideo {
-  // id fournit par BD (int)
+  id: string; // fournit par BD (int)
   nom: string; // nom VARCHAR(50)
   description: string; // description text
   media: string; // media text
