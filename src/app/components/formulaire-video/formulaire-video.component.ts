@@ -16,6 +16,7 @@ interface ISubtitle {
 })
 export class FormulaireVideoComponent {
   newVideo: IVideo = {
+    id: '0',
     nom: '',
     description: '',
     media: '',
