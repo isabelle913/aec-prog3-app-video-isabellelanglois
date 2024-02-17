@@ -17,6 +17,11 @@ export const LINKS: ILink[] = [
     to: '/add',
   },
   {
+    icon: 'settings',
+    name: 'Administration',
+    to: '/admin',
+  },
+  {
     icon: 'history',
     name: 'Historique',
     to: '/',
