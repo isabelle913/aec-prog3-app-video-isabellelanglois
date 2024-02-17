@@ -2,7 +2,7 @@ import { IVideo } from '../interfaces/ivideo';
 
 export const VIDEOS: IVideo[] = [
   {
-    id: '1',
+    id: 1,
     nom: 'Visiter la côte Nord',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
@@ -25,6 +25,8 @@ export const VIDEOS: IVideo[] = [
     subtitle: '',
     avis: [
       {
+        id: 20,
+        id_video: 1,
         note: 9,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque. ',
@@ -32,7 +34,7 @@ export const VIDEOS: IVideo[] = [
     ],
   },
   {
-    id: '2',
+    id: 2,
     nom: 'Apprendre le JavaScript',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
@@ -54,7 +56,7 @@ export const VIDEOS: IVideo[] = [
     subtitle: '',
   },
   {
-    id: '3',
+    id: 3,
     nom: 'Photographier des chutes',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
@@ -76,16 +78,22 @@ export const VIDEOS: IVideo[] = [
     subtitle: '',
     avis: [
       {
+        id: 18,
+        id_video: 3,
         note: 9,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
+        id: 19,
+        id_video: 3,
         note: 7,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
+        id: 20,
+        id_video: 3,
         note: 8,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
@@ -93,7 +101,7 @@ export const VIDEOS: IVideo[] = [
     ],
   },
   {
-    id: '4',
+    id: 4,
     nom: 'Les plus beaux étalons',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
@@ -115,16 +123,22 @@ export const VIDEOS: IVideo[] = [
     subtitle: '',
     avis: [
       {
+        id: 15,
+        id_video: 4,
         note: 9,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
+        id: 16,
+        id_video: 4,
         note: 7,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
+        id: 17,
+        id_video: 4,
         note: 8,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
@@ -132,7 +146,7 @@ export const VIDEOS: IVideo[] = [
     ],
   },
   {
-    id: '5',
+    id: 5,
     nom: 'Apprendre Angular',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
@@ -154,16 +168,22 @@ export const VIDEOS: IVideo[] = [
     subtitle: '',
     avis: [
       {
+        id: 12,
+        id_video: 5,
         note: 9,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
+        id: 13,
+        id_video: 5,
         note: 7,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
+        id: 14,
+        id_video: 5,
         note: 8,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
@@ -171,7 +191,7 @@ export const VIDEOS: IVideo[] = [
     ],
   },
   {
-    id: '6',
+    id: 6,
     nom: 'Apprendre Photoshop',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
@@ -193,16 +213,22 @@ export const VIDEOS: IVideo[] = [
     subtitle: '',
     avis: [
       {
+        id: 9,
+        id_video: 6,
         note: 9,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
+        id: 10,
+        id_video: 6,
         note: 7,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
+        id: 11,
+        id_video: 6,
         note: 8,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
@@ -210,7 +236,7 @@ export const VIDEOS: IVideo[] = [
     ],
   },
   {
-    id: '7',
+    id: 7,
     nom: 'Nouveautés cinéma',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
@@ -232,16 +258,22 @@ export const VIDEOS: IVideo[] = [
     subtitle: '',
     avis: [
       {
+        id: 6,
+        id_video: 7,
         note: 9,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
+        id: 7,
+        id_video: 7,
         note: 7,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
+        id: 8,
+        id_video: 7,
         note: 8,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
@@ -249,7 +281,7 @@ export const VIDEOS: IVideo[] = [
     ],
   },
   {
-    id: '8',
+    id: 8,
     nom: 'Visiter Disneyland',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
@@ -271,16 +303,22 @@ export const VIDEOS: IVideo[] = [
     subtitle: 'st',
     avis: [
       {
+        id: 3,
+        id_video: 8,
         note: 9,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
+        id: 4,
+        id_video: 8,
         note: 7,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
+        id: 5,
+        id_video: 8,
         note: 8,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
@@ -288,7 +326,7 @@ export const VIDEOS: IVideo[] = [
     ],
   },
   {
-    id: '9',
+    id: 9,
     nom: 'Mario Bros the Movies',
     description:
       'Lorem ipsum dolor sit, amet  consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
@@ -311,7 +349,7 @@ export const VIDEOS: IVideo[] = [
     avis: [],
   },
   {
-    id: '10',
+    id: 10,
     nom: 'Sortie photo de nuit',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate!',
@@ -333,16 +371,22 @@ export const VIDEOS: IVideo[] = [
     subtitle: 'cc',
     avis: [
       {
+        id: 1,
+        id_video: 10,
         note: 9,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
+        id: 2,
+        id_video: 10,
         note: 7,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
+        id: 3,
+        id_video: 10,
         note: 8,
         commentaires:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
