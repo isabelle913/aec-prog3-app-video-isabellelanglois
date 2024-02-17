@@ -31,9 +31,18 @@ export class FullVideoComponent {
   }
   getVideos(): void {
     const id: string | null = this.route.snapshot.paramMap.get('id');
+
+    // TODO mettre un guard si pas de id
     this.videoService.getVideos().subscribe((response) => {
       this.videos = response;
       this.video = this.videos.find((video) => video.id === id);
     });
   }
 }
+// TODO la page d'acceuil doit être les vidéos les plus populaire avec les pipes
+// TODO une autre page??
+// TODO page a propos
+// TODO administration avec le tableau ajout, modificatin et suppresion +/- visualisation
+// mettre mes liens actif, une apparence différenet si actifs
+// faire un readme avec conseils ou commenatire pour Carine
+// Faire ménage sur les données de la BD
