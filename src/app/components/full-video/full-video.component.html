@@ -36,7 +36,7 @@
       <li *ngFor="let oneAvis of video.avis" role="listitem" class="my-5">
         <div class="grid grid-cols-12 rounded-lg p-3"
           [class]="{'bg-green-50': oneAvis.note > 5, 'bg-red-50': oneAvis.note <= 5}">
-          <div class="col-span-10 overflow-hidden ">{{ oneAvis.commentaires }}</div>
+          <div class="col-span-10 overflow-hidden ">{{ oneAvis.commentaire }}</div>
           <div class="col-span-2 ml-5 text-right">{{ oneAvis.note }} / 10</div>
         </div>
       </li>

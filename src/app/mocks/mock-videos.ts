@@ -28,7 +28,7 @@ export const VIDEOS: IVideo[] = [
         id: 20,
         id_video: 1,
         note: 9,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque. ',
       },
     ],
@@ -81,21 +81,21 @@ export const VIDEOS: IVideo[] = [
         id: 18,
         id_video: 3,
         note: 9,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
         id: 19,
         id_video: 3,
         note: 7,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
         id: 20,
         id_video: 3,
         note: 8,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
     ],
@@ -126,21 +126,21 @@ export const VIDEOS: IVideo[] = [
         id: 15,
         id_video: 4,
         note: 9,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
         id: 16,
         id_video: 4,
         note: 7,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
         id: 17,
         id_video: 4,
         note: 8,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
     ],
@@ -171,21 +171,21 @@ export const VIDEOS: IVideo[] = [
         id: 12,
         id_video: 5,
         note: 9,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
         id: 13,
         id_video: 5,
         note: 7,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
         id: 14,
         id_video: 5,
         note: 8,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
     ],
@@ -216,21 +216,21 @@ export const VIDEOS: IVideo[] = [
         id: 9,
         id_video: 6,
         note: 9,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
         id: 10,
         id_video: 6,
         note: 7,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
         id: 11,
         id_video: 6,
         note: 8,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
     ],
@@ -261,21 +261,21 @@ export const VIDEOS: IVideo[] = [
         id: 6,
         id_video: 7,
         note: 9,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
         id: 7,
         id_video: 7,
         note: 7,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
         id: 8,
         id_video: 7,
         note: 8,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
     ],
@@ -306,21 +306,21 @@ export const VIDEOS: IVideo[] = [
         id: 3,
         id_video: 8,
         note: 9,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
         id: 4,
         id_video: 8,
         note: 7,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
         id: 5,
         id_video: 8,
         note: 8,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
     ],
@@ -374,21 +374,21 @@ export const VIDEOS: IVideo[] = [
         id: 1,
         id_video: 10,
         note: 9,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
         id: 2,
         id_video: 10,
         note: 7,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
       {
         id: 3,
         id_video: 10,
         note: 8,
-        commentaires:
+        commentaire:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
       },
     ],
