@@ -48,3 +48,9 @@ export class AppComponent implements OnInit {
     });
   }
 }
+// TODO la page d'acceuil doit être les vidéos les plus populaire avec les pipes
+// TODO une autre page??
+// TODO page a propos
+// mettre mes liens actif, une apparence différenet si actifs
+// faire un readme avec conseils ou commentaire pour Carine
+// Faire ménage sur les données de la BD
