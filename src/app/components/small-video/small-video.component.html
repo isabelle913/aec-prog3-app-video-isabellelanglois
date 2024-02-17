@@ -23,7 +23,7 @@
     <p class="pt-4 text-xs">{{ video?.nbVues || 0 | formatVisionnement }}
       {{ video?.nbVues || 0 | i18nPlural: {'=0': 'Aucun visionnement', '=1': 'visionnement', 'other': 'visionnements'}
       }}
-      - il y a {{ video?.datePublication || '' | dateDelayToday }}
+      - il y a {{ video?.date_publication || '' | dateDelayToday }}
     </p>
     <p>Score: {{ video?.score }}</p>
   </mat-card-content>

@@ -9,7 +9,7 @@ export interface IVideo {
   code: string; //code VARCHAR(10) // TODO ??? code vs id
   categories: string[]; // table -> categories: id (int), id_video (int), categorie (VARCHAR20) ou une liste fixe et un champ dans table videos_catégories
   auteur: IAuteur;
-  datePublication: string; // date_publication Date
+  date_publication: string; // date_publication Date
   duree: number; // duree int (6)
   nbVues: number; // nb_vue default 0 int(11)
   score: number; // score default 0 int(11)
