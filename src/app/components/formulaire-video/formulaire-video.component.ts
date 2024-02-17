@@ -1,7 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { IVideo } from 'src/app/interfaces/ivideo';
 import { AUTEURS } from 'src/app/mocks/mock-auteurs';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { NgForm } from '@angular/forms';
+import { VideoService } from 'src/app/services/video.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Observable } from 'rxjs';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 // aelect
 interface ISubtitle {
@@ -15,7 +20,7 @@ interface ISubtitle {
   styleUrls: ['./formulaire-video.component.css'],
 })
 export class FormulaireVideoComponent {
-  newVideo: IVideo = {
+  video: IVideo = {
     id: '0',
     nom: '',
     description: '',
@@ -23,13 +28,14 @@ export class FormulaireVideoComponent {
     code: '',
     categories: [],
     auteur: AUTEURS[0],
-    datePublication: '',
+    date_publication: '2024-02-14', // TODO corriger format de date, il n'accepte pas le format reçu pat le date picker
     duree: 0,
     nbVues: 0, // 0 en partant
     score: 0, // 0 en partant
     subtitle: 'CC',
     avis: [],
   };
+
   dureeString: string = '0';
 
   // select
@@ -52,13 +58,6 @@ export class FormulaireVideoComponent {
   // date picker
   minDate: Date;
 
-  constructor() {
-    // date picker
-    this.minDate = new Date();
-    // Chip autocomplete
-    this.filtrer(); // Filtre au mounted
-  }
-
   //chip autocmplete
   categoriesListe: string[] = [
     'Voyager',
@@ -78,12 +77,29 @@ export class FormulaireVideoComponent {
 
   categorie_input: string = '';
 
+  constructor(
+    private videoService: VideoService,
+    private _snackBar: MatSnackBar,
+    private dialogRef: MatDialogRef<FormulaireVideoComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: IVideo
+  ) {
+    // date picker
+    this.minDate = new Date();
+    // Chip autocomplete
+    this.filtrer(); // Filtre au mounted
+
+    if (data) {
+      this.video = data;
+    }
+  }
+
+  //// vieux
   remove(index: number) {
-    this.newVideo.categories.splice(index, 1);
+    this.video.categories.splice(index, 1);
   }
   ajouter(event: MatAutocompleteSelectedEvent) {
-    if (!this.newVideo.categories.includes(event.option.viewValue)) {
-      this.newVideo.categories.push(event.option.viewValue);
+    if (!this.video.categories.includes(event.option.viewValue)) {
+      this.video.categories.push(event.option.viewValue);
       this.categorie_input = '';
     }
   }
@@ -94,7 +110,40 @@ export class FormulaireVideoComponent {
   }
 
   // submit
-  newVideoSubmit() {
-    console.log(this.newVideo);
+  videoSubmit() {
+    console.log(this.video);
+  }
+
+  ///// nouveau
+
+  addVideo(videoForm: NgForm) {
+    console.log('this.video', this.video);
+    console.log('videoForm', videoForm);
+    if (videoForm.valid) {
+      console.log('Miip');
+      this.videoService.addVideo(this.video).subscribe((_) => {
+        videoForm.resetForm();
+        this.dialogRef.close('Vidéo ajouté!');
+        // this._snackBar.open('Vidéo ajouté!', undefined, {
+        //   duration: 2000,
+        // });
+      });
+    }
+  }
+  updateVideo(videoForm: NgForm) {
+    console.log('this.video', this.video);
+    console.log('videoForm', videoForm);
+    if (videoForm.valid) {
+      console.log('Biip');
+      this.videoService.updateVideo(this.video).subscribe((_) => {
+        videoForm.resetForm();
+        this.dialogRef.close('Vidéo modifié!');
+      });
+    }
+  }
+  annuler() {
+    this.dialogRef.close();
   }
 }
+
+// TODO corriger les v-if des boutons et la valildation
