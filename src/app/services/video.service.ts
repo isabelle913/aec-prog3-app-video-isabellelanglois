@@ -11,23 +11,26 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class VideoService {
-  API_URL = 'http://localhost/api-videos/';
+  API_URL_VIDEOS = 'http://localhost/api-videos/';
   constructor(private http: HttpClient) {}
 
   getVideos(): Observable<IVideo[]> {
-    return this.http.get<IVideo[]>(this.API_URL);
+    return this.http.get<IVideo[]>(this.API_URL_VIDEOS);
+  }
+  getOneVideo(id: number): Observable<IVideo> {
+    return this.http.get<IVideo>(`${this.API_URL_VIDEOS}?id=${id}`);
   }
   addVideo(video: IVideo): Observable<void> {
-    return this.http.post<void>(this.API_URL, video, httpOptions);
+    return this.http.post<void>(this.API_URL_VIDEOS, video, httpOptions);
   }
   updateVideo(video: IVideo): Observable<void> {
     return this.http.put<void>(
-      `${this.API_URL}?id=${video.id}`,
+      `${this.API_URL_VIDEOS}?id=${video.id}`,
       video,
       httpOptions
     );
   }
   deleteVideo(id: number): Observable<IVideo[]> {
-    return this.http.delete<IVideo[]>(`${this.API_URL}?id=${id}`);
+    return this.http.delete<IVideo[]>(`${this.API_URL_VIDEOS}?id=${id}`);
   }
 }
