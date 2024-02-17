@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { IVideo } from 'src/app/interfaces/ivideo';
 import { VIDEOS } from 'src/app/mocks/mock-videos';
 import { VideoService } from 'src/app/services/video.service';
+import { AvisService } from 'src/app/services/avis/avis.service';
 
 @Component({
   selector: 'app-full-video',
@@ -18,7 +19,8 @@ export class FullVideoComponent {
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private videoService: VideoService
+    private videoService: VideoService,
+    private avisService: AvisService
   ) {}
 
   ngOnInit(): void {
@@ -36,6 +38,14 @@ export class FullVideoComponent {
     this.videoService.getOneVideo(id).subscribe((response) => {
       if (!response) return;
       this.video = response;
+      console.log('Video', this.video);
+      this.getAvis(this.video.id);
+    });
+  }
+  getAvis(id_video: number) {
+    this.avisService.getAvis(id_video).subscribe((response) => {
+      console.log(response);
+      if (response && this.video) this.video.avis = response;
       console.log('Video', this.video);
     });
   }
