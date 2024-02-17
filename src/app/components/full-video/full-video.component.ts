@@ -12,8 +12,6 @@ import { VideoService } from 'src/app/services/video.service';
   styleUrls: ['./full-video.component.css'],
 })
 export class FullVideoComponent {
-  // videos = VIDEOS;
-  videos: IVideo[] = [];
   video: IVideo | undefined;
   mediaDefaut = '../../../assets/logo_300-170.png';
 
@@ -24,25 +22,24 @@ export class FullVideoComponent {
   ) {}
 
   ngOnInit(): void {
-    this.getVideos();
+    this.getOneVideo();
   }
   goBack(): void {
     this.location.back();
   }
-  getVideos(): void {
-    const id: string | null = this.route.snapshot.paramMap.get('id');
 
-    // TODO mettre un guard si pas de id
-    this.videoService.getVideos().subscribe((response) => {
-      this.videos = response;
-      this.video = this.videos.find((video) => video.id === id);
+  getOneVideo(): void {
+    const id: number | null = Number(this.route.snapshot.paramMap.get('id'));
+
+    if (!id) return;
+
+    this.videoService.getOneVideo(id).subscribe((response) => {
+      if (!response) return;
+      this.video = response;
+      console.log('Video', this.video);
     });
   }
 }
-// TODO la page d'acceuil doit être les vidéos les plus populaire avec les pipes
-// TODO une autre page??
-// TODO page a propos
-// TODO administration avec le tableau ajout, modificatin et suppresion +/- visualisation
-// mettre mes liens actif, une apparence différenet si actifs
-// faire un readme avec conseils ou commenatire pour Carine
-// Faire ménage sur les données de la BD
+
+// <!-- TODO vérifier pour que le nb_vues soit celui reçu du serveur soit utilisé -->
+// <!-- TODO idem pour le score soit celui reçu du serveur soit utilisé -->
