@@ -7,7 +7,7 @@ import { AdminComponent } from './components/admin/admin.component';
 
 const routes: Routes = [
   { path: 'videos', component: ListeVideoComponent },
-  { path: 'videos/favorite', component: ListeVideoComponent },
+  { path: 'videos/favorite', component: ListeVideoComponent }, //TODO est-e que je garde favorite?
   { path: 'video/:id', component: FullVideoComponent },
   { path: 'add', component: FormulaireVideoComponent },
   { path: 'admin', component: AdminComponent },

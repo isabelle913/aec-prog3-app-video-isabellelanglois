@@ -12,11 +12,6 @@ export const LINKS: ILink[] = [
     to: '/videos/favorite',
   },
   {
-    icon: 'add',
-    name: 'Ajouter vidéo',
-    to: '/add',
-  },
-  {
     icon: 'settings',
     name: 'Administration',
     to: '/admin',
