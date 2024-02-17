@@ -50,6 +50,7 @@ import { FilterScorePipe } from './pipes/filter-score.pipe';
 import { FilterCategoriesPipe } from './pipes/filter-categories.pipe';
 import { VideoService } from './services/video.service';
 import { AdminComponent } from './components/admin/admin.component';
+import { AvisService } from './services/avis/avis.service';
 
 @NgModule({
   declarations: [
@@ -106,7 +107,7 @@ import { AdminComponent } from './components/admin/admin.component';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [VideoService],
+  providers: [VideoService, AvisService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
