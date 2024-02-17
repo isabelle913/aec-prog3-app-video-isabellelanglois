@@ -6,75 +6,19 @@
 
     <!-- gauche -->
     <div class="2xl:basis-2/3 p-5">
-      <div class="flex flex-col items-center">
-        <div class="text-2xl py-4">Liste des vidéos</div>
-        <mat-form-field class="">
-          <mat-label>Recherche</mat-label>
-          <input matInput (keyup)="applyFilter($event)" #input>
-          <mat-icon matSuffix>search</mat-icon>
-        </mat-form-field>
-
-        <div>
-          <table mat-table #tableVideos [dataSource]="dataSourceVideos" matSort>
-            <ng-container matColumnDef="id">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
-              <td mat-cell *matCellDef="let video">{{video.id}} </td>
-            </ng-container>
-            <ng-container matColumnDef="nom">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>Nom</th>
-              <td mat-cell *matCellDef="let video">{{video.nom}} </td>
-            </ng-container>
-            <ng-container matColumnDef="code">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>Code</th>
-              <td mat-cell *matCellDef="let video">{{video.code}} </td>
-            </ng-container>
-            <ng-container matColumnDef="date_publication">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>Date de publication</th>
-              <td mat-cell *matCellDef="let video">{{video.date_publication}} </td>
-            </ng-container>
-            <ng-container matColumnDef="duree">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>Durée</th>
-              <td mat-cell *matCellDef="let video">{{video.duree}} </td>
-            </ng-container>
-            <ng-container matColumnDef="score">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>Score</th>
-              <td mat-cell *matCellDef="let video">{{video.score}} </td>
-            </ng-container>
-            <ng-container matColumnDef="actions">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> </th>
-              <td mat-cell *matCellDef="let video">
-                <button mat-icon-button aria-label="Modifier" (click)="openFullVideo(video.id)">
-                  <mat-icon>visibility</mat-icon>
-                </button>
-                <button mat-icon-button aria-label="Modifier" (click)="openFormVideo(video)">
-                  <mat-icon>edit</mat-icon>
-                </button>
-                <button mat-icon-button aria-label="Supprimer" (click)="deleteVideo(video.id)">
-                  <mat-icon>delete</mat-icon>
-                </button>
-              </td>
-            </ng-container>
-
-            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-            <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
-          </table>
-          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"
-            aria-label="Sélectionner la page des vidéos"></mat-paginator>
-        </div>
-      </div>
+      <app-admin-video></app-admin-video>
     </div>
-
 
     <!-- droite -->
     <div class="2xl:basis-1/3 p-5 bg-blue-50 rounded-lg">
       <div class="flex flex-col items-center">
         <div class="text-2xl">Autres utilitaires</div>
         <div class="flex justify-center mt-6">
-          <button (click)="openFormVideo(undefined)"
+          <button (click)="openFormVideo()"
             class="bg-blue-500 rounded-lg px-20 py-5 text-white text-xl focus:scale-110 hover:scale-110 mr-6">Ajouter un
             vidéo</button>
         </div>
       </div>
     </div>
+
   </div>
-</div>

@@ -51,6 +51,8 @@ import { FilterCategoriesPipe } from './pipes/filter-categories.pipe';
 import { VideoService } from './services/video.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { AvisService } from './services/avis/avis.service';
+import { AdminVideoComponent } from './components/admin/admin-video/admin-video.component';
+import { AdminAvisComponent } from './components/admin/admin-avis/admin-avis.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +77,8 @@ import { AvisService } from './services/avis/avis.service';
     FilterScorePipe,
     FilterCategoriesPipe,
     AdminComponent,
+    AdminVideoComponent,
+    AdminAvisComponent,
   ],
   imports: [
     BrowserModule,
