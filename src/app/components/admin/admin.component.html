@@ -6,7 +6,13 @@
 
     <!-- gauche -->
     <div class="2xl:basis-2/3 p-5">
-      <app-admin-video></app-admin-video>
+      <div class="flex justify-start gap-5 border-b-2 border-blue-100 mb-6">
+        <div [ngClass]="getClassTab('video')" (click)="onChangetab('video')">Vidéos</div>
+        <div [ngClass]="getClassTab('avis')" (click)="onChangetab('avis')">Avis</div>
+        <div [ngClass]="getClassTab('auteur')" (click)="onChangetab('auteur')">Auteurs</div>
+      </div>
+      <app-admin-video *ngIf="tab==='video'"></app-admin-video>
+      <app-admin-avis *ngIf="tab==='avis'"></app-admin-avis>
     </div>
 
     <!-- droite -->
@@ -15,8 +21,9 @@
         <div class="text-2xl">Autres utilitaires</div>
         <div class="flex justify-center mt-6">
           <button (click)="openFormVideo()"
-            class="bg-blue-500 rounded-lg px-20 py-5 text-white text-xl focus:scale-110 hover:scale-110 mr-6">Ajouter un
-            vidéo</button>
+            class="bg-blue-500 rounded-lg px-20 py-5 text-white text-xl focus:scale-110 hover:scale-110 mr-6">
+            Ajouter une vidéo
+          </button>
         </div>
       </div>
     </div>

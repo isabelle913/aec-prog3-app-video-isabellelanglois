@@ -9,9 +9,21 @@ import { FormulaireVideoComponent } from '../formulaire-video/formulaire-video.c
   styleUrls: ['./admin.component.css'],
 })
 export class AdminComponent {
+  tab = 'video';
+
   constructor(private _snackBar: MatSnackBar, private dialog: MatDialog) {}
 
-  // OK
+  onChangetab(tab: string) {
+    this.tab = tab;
+  }
+
+  //  <!--  [ngClass]="{tab==='video' ? 'hover:border-b-4 border-blue-500':'hover:border-b-4 border-gray-800'}" -->
+  getClassTab(actualTab: string) {
+    if (actualTab === this.tab)
+      return 'w-[100px] text-2xl py-4 text-center border-b-4 border-blue-500 cursor-pointer';
+    return 'w-[100px] text-2xl py-4 text-center hover:border-b-4 hover:border-gray-200 cursor-pointer';
+  }
+
   openFormVideo() {
     const dialogRef = this.dialog.open(FormulaireVideoComponent, {
       data: undefined,
