@@ -15,7 +15,10 @@ export class AvisService {
   API_URL_AVIS = 'http://localhost/api-videos/avis/';
   constructor(private http: HttpClient) {}
 
-  getAvis(id_video: number): Observable<IAvis[]> {
+  getAvis(): Observable<IAvis[]> {
+    return this.http.get<IAvis[]>(this.API_URL_AVIS);
+  }
+  getAvisOneVideo(id_video: number): Observable<IAvis[]> {
     return this.http.get<IAvis[]>(`${this.API_URL_AVIS}?video=${id_video}`);
   }
   // TODO tester/valider les foncdtions suivantes
