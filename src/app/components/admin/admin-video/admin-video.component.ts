@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VideoService } from 'src/app/services/video.service';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
@@ -14,7 +14,7 @@ import { IVideo } from 'src/app/interfaces/ivideo';
   templateUrl: './admin-video.component.html',
   styleUrls: ['./admin-video.component.css'],
 })
-export class AdminVideoComponent {
+export class AdminVideoComponent implements OnInit {
   columnsToDisplay: string[] = [
     'id',
     'nom',
@@ -31,7 +31,6 @@ export class AdminVideoComponent {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
-    private route: ActivatedRoute,
     private videoService: VideoService,
     private _snackBar: MatSnackBar,
     private dialog: MatDialog,
