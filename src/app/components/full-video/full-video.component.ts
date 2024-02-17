@@ -39,11 +39,11 @@ export class FullVideoComponent {
       if (!response) return;
       this.video = response;
       console.log('Video', this.video);
-      this.getAvis(this.video.id);
+      this.getAvisOneVideo(this.video.id);
     });
   }
-  getAvis(id_video: number) {
-    this.avisService.getAvis(id_video).subscribe((response) => {
+  getAvisOneVideo(id_video: number) {
+    this.avisService.getAvisOneVideo(id_video).subscribe((response) => {
       console.log(response);
       if (response && this.video) this.video.avis = response;
       console.log('Video', this.video);
