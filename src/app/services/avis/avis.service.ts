@@ -12,10 +12,10 @@ const httpOptions = {
 })
 export class AvisService {
   // http://localhost/api-videos/avis/?video=9
-  API_URL_AVIS = 'http://localhost/api-videos/avis';
+  API_URL_AVIS = 'http://localhost/api-videos/avis/';
   constructor(private http: HttpClient) {}
 
-  getVideos(id_video: number): Observable<IAvis[]> {
+  getAvis(id_video: number): Observable<IAvis[]> {
     return this.http.get<IAvis[]>(`${this.API_URL_AVIS}?video=${id_video}`);
   }
   // TODO tester/valider les foncdtions suivantes
