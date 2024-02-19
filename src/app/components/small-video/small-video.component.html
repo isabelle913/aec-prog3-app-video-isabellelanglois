@@ -5,8 +5,8 @@
   <mat-chip-option class="card__duree">{{ video?.duree || 0 | formatDuree }}</mat-chip-option>
 
   <div *ngIf="video" class="card__honor">
-    <img *ngIf=" video.score >= 5000" [src]="imgStar" alt="Icône star">
-    <img *ngIf="video.score <= -5000" [src]="imgCitron" alt="Petit citron">
+    <img *ngIf=" video.score >= 1000" [src]="imgStar" alt="Icône star">
+    <img *ngIf="video.score <= -1000" [src]="imgCitron" alt="Petit citron">
   </div>
 
 
@@ -18,14 +18,10 @@
 
   <mat-card-content>
     <app-utilisateur [utilisateur]=" video?.auteur"></app-utilisateur>
-    <!-- TODO vérifier si respect requis avec le projet 3 visionnement et score -->
 
-    <p class="pt-4 text-xs">{{ video?.nbVues || 0 | formatVisionnement }}
-      {{ video?.nbVues || 0 | i18nPlural: {'=0': 'Aucun visionnement', '=1': 'visionnement', 'other': 'visionnements'}
-      }}
-      - il y a {{ video?.date_publication || '' | dateDelayToday }}
-    </p>
-    <p>Score: {{ video?.score }}</p>
+    <app-visionnement [nb_vues]="video?.nb_vues" [date_publication]="video?.date_publication" [isSmallText]="true" />
+
+    <p class="text-xs">Score: {{ video?.score }}</p>
   </mat-card-content>
 
 </mat-card>

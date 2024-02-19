@@ -2,12 +2,8 @@
 <div class="mt-5 flex flex-row lg:flex-col justify-start gap-x-5 lg:gap-y-3">
   <!-- TODO vérifier si respect requis avec le publié à la suite -->
   <div>Publié il y a {{ video?.date_publication || '' | dateDelayToday }}</div>
-  <!-- prettier-ignore -->
-  <div
-    [matTooltip]="( video?.nbVues || 0 | formatNumberLocale ) + (video?.nbVues || 0 | i18nPlural: {'=0': 'Aucun visionnement', '=1': ' visionnement', 'other': ' visionnements'})  +'  ● '  + ( video?.date_publication) ">
-    Visionné: {{ video?.nbVues || 0 | formatVisionnement}}
-    {{ video?.nbVues || 0 | i18nPlural: {'=0': 'Aucun visionnement', '=1': 'visionnement', 'other': 'visionnements'} }}
-  </div>
+  <app-visionnement [nb_vues]="video?.nb_vues" [date_publication]="video?.date_publication" [isShowTooltip]="false"
+    [isShowDatePublication]="false" />
 
 </div>
 <div class="text-right lg:mt-5">Vidéo: {{ video?.code }}</div>
