@@ -8,7 +8,6 @@
     </mat-form-field>
   </div>
 
-
   <div>
     <table mat-table #tableAvis [dataSource]="dataSourceAvis" matSort>
       <ng-container matColumnDef="id">
@@ -27,10 +26,9 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Note</th>
         <td mat-cell *matCellDef="let avis">{{avis.note}} </td>
       </ng-container>
-      <!-- TODO corriger disposition -->
       <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> </th>
-        <td mat-cell *matCellDef="let avis" class="flex flex-row">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let avis">
           <button mat-icon-button aria-label="Consulter" (click)="openFullVideo(avis.id_video)">
             <mat-icon>visibility</mat-icon>
           </button>
