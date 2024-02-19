@@ -11,7 +11,7 @@ export interface IVideo {
   auteur: IAuteur;
   date_publication: string; // date_publication Date
   duree: number; // duree int (6)
-  nbVues: number; // nb_vue default 0 int(11)
+  nb_vues: number; // nb_vue default 0 int(11)
   score: number; // score default 0 int(11)
   subtitle?: string; // subtitle VARCHAR(10)  cours 6 -> CC (Closed caption) ou ST (subtitles)
   // cours 9 -> Aucun, Sous-titre ST, Sous-titrage pour sourd et malentendants CC

@@ -30,7 +30,7 @@ export class FormulaireVideoComponent {
     auteur: AUTEURS[0],
     date_publication: '2024-02-14', // TODO corriger format de date, il n'accepte pas le format reçu pat le date picker
     duree: 0,
-    nbVues: 0, // 0 en partant
+    nb_vues: 0, // 0 en partant
     score: 0, // 0 en partant
     subtitle: 'CC',
     avis: [],

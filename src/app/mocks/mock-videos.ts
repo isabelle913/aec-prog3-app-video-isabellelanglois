@@ -20,7 +20,7 @@ export const VIDEOS: IVideo[] = [
     },
     date_publication: '15 octobre 2015',
     duree: 4000, // TODO vérifier durée maximal dans BD
-    nbVues: 15850698,
+    nb_vues: 15850698,
     score: 15,
     subtitle: '',
     avis: [
@@ -51,7 +51,7 @@ export const VIDEOS: IVideo[] = [
     },
     date_publication: '15 octobre 2015',
     duree: 243,
-    nbVues: 2539,
+    nb_vues: 2539,
     score: 2000,
     subtitle: '',
   },
@@ -73,7 +73,7 @@ export const VIDEOS: IVideo[] = [
     },
     date_publication: '15 octobre 2015',
     duree: 10375,
-    nbVues: 55248,
+    nb_vues: 55248,
     score: 0,
     subtitle: '',
     avis: [
@@ -118,7 +118,7 @@ export const VIDEOS: IVideo[] = [
     },
     date_publication: '15 octobre 2015',
     duree: 375,
-    nbVues: 799,
+    nb_vues: 799,
     score: 0,
     subtitle: '',
     avis: [
@@ -163,7 +163,7 @@ export const VIDEOS: IVideo[] = [
     },
     date_publication: '15 octobre 2015',
     duree: 24580,
-    nbVues: 15360000,
+    nb_vues: 15360000,
     score: 0,
     subtitle: '',
     avis: [
@@ -208,7 +208,7 @@ export const VIDEOS: IVideo[] = [
     },
     date_publication: '15 octobre 2015',
     duree: 120,
-    nbVues: 18500,
+    nb_vues: 18500,
     score: 0,
     subtitle: '',
     avis: [
@@ -253,7 +253,7 @@ export const VIDEOS: IVideo[] = [
     },
     date_publication: '15 octobre 2015',
     duree: 610,
-    nbVues: 0,
+    nb_vues: 0,
     score: 6000,
     subtitle: '',
     avis: [
@@ -298,7 +298,7 @@ export const VIDEOS: IVideo[] = [
     },
     date_publication: '15 octobre 2015',
     duree: 30,
-    nbVues: 1,
+    nb_vues: 1,
     score: -5000,
     subtitle: 'st',
     avis: [
@@ -343,7 +343,7 @@ export const VIDEOS: IVideo[] = [
     },
     date_publication: '15 octobre 2015',
     duree: 60,
-    nbVues: 1,
+    nb_vues: 1,
     score: 0,
     subtitle: 'st',
     avis: [],
@@ -366,7 +366,7 @@ export const VIDEOS: IVideo[] = [
     },
     date_publication: '2023-12-26',
     duree: 3600,
-    nbVues: 200058,
+    nb_vues: 200058,
     score: 10000,
     subtitle: 'cc',
     avis: [
