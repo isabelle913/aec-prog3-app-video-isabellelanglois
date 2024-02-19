@@ -6,3 +6,6 @@
   padding: 20px;
   gap: 20px;
 }
+mat-slider {
+  width: 300px;
+}

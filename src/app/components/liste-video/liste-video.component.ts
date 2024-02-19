@@ -14,8 +14,8 @@ export class ListeVideoComponent implements OnInit {
   // videos = VIDEOS;
   videos: IVideo[] = [];
   categories = CATEGORIES;
-  minScore = -999999999;
-  maxScore = 999999999;
+  minScore = 1000;
+  maxScore = 1000000;
   categoriesSelected: string[] = [];
 
   constructor(
@@ -39,7 +39,10 @@ export class ListeVideoComponent implements OnInit {
     this.getVideos();
   }
 
-  // TODO possiblement ajouter un range pour choisir les min/max
+  formatLabel(value: number) {
+    this.minScore = value;
+    return `${this.minScore}`;
+  }
   // TODO gérer les catégories sélectionnées
 
   getVideos(): void {
