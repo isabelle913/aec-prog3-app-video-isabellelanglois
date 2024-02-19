@@ -1,0 +1,11 @@
+<!-- prettier-ignore -->
+
+<p class="pt-4" [ngClass]="{'text-xs': isSmallText}" [ngStyle]="{'margin-bottom': '0px'}"
+  [matTooltip]="( nb_vues || 0 | formatNumberLocale ) + (nb_vues || 0 | i18nPlural: {'=0': 'Aucun visionnement', '=1': ' visionnement', 'other': ' visionnements'})  +'  ● '  + ( date_publication )"
+  [matTooltipDisabled]="isShowTooltip">
+  {{ nb_vues || 0 | formatVisionnement }}
+  {{ nb_vues || 0 | i18nPlural: {'=0': 'Aucun visionnement', '=1': 'visionnement', 'other': 'visionnements'} }}
+  <span *ngIf="isShowDatePublication">- il y a {{ date_publication || '' | dateDelayToday }}</span>
+</p>
+
+<!-- TODO ?? Est-ce possible d'utiliser les pipes dans le ts? Si oui alors pourquoi pas utiliser juste une fonction réutilisable -->
