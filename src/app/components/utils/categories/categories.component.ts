@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 
 @Component({
   selector: 'app-categories',
@@ -11,8 +12,7 @@ export class CategoriesComponent {
   @Input() stacked: boolean = false;
   @Input() color: boolean = false;
 
-  // console.log(this.categories)
-
+  categoriesSelected: string[] = [];
   availableColors: string[] = ['primary', 'accent', 'warn'];
 
   randomColor() {
@@ -21,4 +21,16 @@ export class CategoriesComponent {
     return this.availableColors[indexRandom];
   }
   // TODO ne pas pouvoir les sélectionner/desélectionner des full vidéos
+
+  onSelect(value: string) {
+    console.log(value);
+  }
+  selected(): void {
+    console.log('Miip');
+    // console.log('event', event);
+    // this.categoriesSelected.push(event.option.viewValue);
+    // console.log('categoriesSelected', this.categoriesSelected);
+    // this.fruitInput.nativeElement.value = '';
+    // this.fruitCtrl.setValue(null);
+  }
 }
