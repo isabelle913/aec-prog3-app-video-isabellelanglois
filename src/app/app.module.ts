@@ -53,6 +53,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AvisService } from './services/avis/avis.service';
 import { AdminVideoComponent } from './components/admin/admin-video/admin-video.component';
 import { AdminAvisComponent } from './components/admin/admin-avis/admin-avis.component';
+import { VisionnementComponent } from './components/utils/visionnement/visionnement.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { AdminAvisComponent } from './components/admin/admin-avis/admin-avis.com
     AdminComponent,
     AdminVideoComponent,
     AdminAvisComponent,
+    VisionnementComponent,
   ],
   imports: [
     BrowserModule,
