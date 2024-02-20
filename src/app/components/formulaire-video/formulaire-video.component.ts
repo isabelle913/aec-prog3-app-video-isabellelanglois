@@ -141,5 +141,3 @@ export class FormulaireVideoComponent {
     this.dialogRef.close();
   }
 }
-
-// TODO corriger les v-if des boutons et la valildation

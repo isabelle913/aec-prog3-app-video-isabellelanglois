@@ -52,5 +52,4 @@ export class FullVideoComponent {
 }
 // TODO corrigé si pas d'avis erreur dans la console
 
-// <!-- TODO vérifier pour que le nb_vues soit celui reçu du serveur soit utilisé -->
 // <!-- TODO idem pour le score soit celui reçu du serveur soit utilisé -->

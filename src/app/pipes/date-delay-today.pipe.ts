@@ -3,7 +3,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'dateDelayToday',
 })
-// TODO ?? utilisation plurialisations dans fichier ts
 export class DateDelayTodayPipe implements PipeTransform {
   transform(value: string): string {
     const now = new Date();
@@ -22,5 +21,3 @@ export class DateDelayTodayPipe implements PipeTransform {
     return str;
   }
 }
-
-// TODO est-ce que je peux utiliser int.NumberFormat ou int.DateTimeFormat dans ce projet? IL y en a un aussi pour le pluriel

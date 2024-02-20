@@ -8,7 +8,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 
 const routes: Routes = [
   { path: 'videos', component: ListeVideoComponent },
-  { path: 'videos/favorite', component: ListeVideoComponent }, //TODO est-e que je garde favorite?
+  { path: 'videos/favorite', component: ListeVideoComponent },
   { path: 'video/:id', component: FullVideoComponent },
   { path: 'add', component: FormulaireVideoComponent },
   { path: 'admin', component: AdminComponent },

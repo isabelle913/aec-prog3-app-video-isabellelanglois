@@ -8,7 +8,7 @@ export const VIDEOS: IVideo[] = [
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum eaque distinctio repellendus vero tenetur officiis quisquam dicta, maiores minima, nobis vitae repellat saepe at voluptate! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum aliquid ut quaerat excepturi quis corrupti. Laborum numquam id iusto ab, non error animi atque.',
     media: './assets/img/cote-nord.jpg',
     code: 'V001',
-    categories: ['Voyager', 'Québec'], // TODO
+    categories: ['Voyager', 'Québec'],
     auteur: {
       // TODO
       nom: 'Une curieuse',
@@ -19,7 +19,7 @@ export const VIDEOS: IVideo[] = [
       auteurDescription: '',
     },
     date_publication: '15 octobre 2015',
-    duree: 4000, // TODO vérifier durée maximal dans BD
+    duree: 4000,
     nb_vues: 15850698,
     score: 15,
     subtitle: '',
