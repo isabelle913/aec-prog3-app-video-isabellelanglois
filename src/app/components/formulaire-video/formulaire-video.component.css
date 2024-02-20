@@ -9,3 +9,14 @@
 .full-width {
   width: 100%;
 }
+.btn {
+  color: white !important;
+  cursor: pointer;
+  background-color: #3b82f6;
+  padding: 30px 80px;
+  font-size: 20px;
+  border-radius: 8px;
+}
+.btn:hover {
+  scale: 1.1;
+}

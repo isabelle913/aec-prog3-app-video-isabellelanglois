@@ -1,4 +1,4 @@
-<div class="container-form bg-blue-50 rounded-lg">
+<div class="container-form rounded-lg">
 
 
   <form #videoForm="ngForm">
@@ -26,6 +26,13 @@
         <textarea matInput name="description" [(ngModel)]="video.description"></textarea>
       </mat-form-field>
 
+      <!-- Media -->
+      <mat-form-field class="col-span-12">
+        <mat-label>Url du vidéo</mat-label>
+        <input matInput name="media" [(ngModel)]="video.media">
+        <mat-hint>https://...</mat-hint>
+      </mat-form-field>
+
       <!-- TODO ?? je ne trouve pas de multiple select en template driven -->
       <mat-form-field class="col-span-12 md:col-span-6">
         <mat-label>Choisir les catégories appropriées:</mat-label>
@@ -38,14 +45,14 @@
           </mat-chip-row>
         </mat-chip-grid>
         <input placeholder="Ajouter une catégorie..." name="categories" [(ngModel)]="categorie_input" #categorieInput
-          [matChipInputFor]="chipGridCategories" [matAutocomplete]="auto" (ngModelChange)="filtrer()" />
+          [matChipInputFor]="chipGridCategories" [matAutocomplete]="auto" (ngModelChange)="filtrer()" required />
         <mat-autocomplete #auto="matAutocomplete" (optionSelected)="ajouter($event)">
           <mat-option *ngFor="let categorie of categoriesFiltrees" [value]="categorie">
             {{categorie}}
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
-      <!-- minimun 1 catégorie -->
+
 
       <!-- Sous-titres -->
       <mat-form-field class="col-span-12 md:col-span-5 md:col-start-8">
@@ -62,14 +69,14 @@
         <p class="text-lg pl-2 md:pl-4">Durée: {{ formatLabel(video.duree) }}</p>
         <div class="px-2 md:px-4">
           <mat-slider class="slider-duree" min="1" max="1800" discrete [displayWith]="formatLabel">
-            <input matSliderThumb name="duree" [(ngModel)]="video.duree" #duree="ngModel" min="1" max="1800">
+            <input value='1' matSliderThumb name="duree" [(ngModel)]="video.duree" #duree="ngModel" min="1" max="1800">
             <mat-error *ngIf="duree.errors?.['required']">Ce champ est requis</mat-error>
-            <mat-error *ngIf="duree.errors?.['minlength']">Doit contenir plus de 3 caractères</mat-error>
-            <mat-error *ngIf="duree.errors?.['maxlength']">Doit contenir un maximun de 50 caractères</mat-error>
+            <mat-error *ngIf="duree.errors?.['minlength']">Durée minimale de 1 secondes</mat-error>
+            <mat-error *ngIf="duree.errors?.['maxlength']">Durée maximale de 30 minutes ( 1800 secondes) </mat-error>
           </mat-slider>
         </div>
       </div>
-      <!-- min 1 sec max je décide -->
+
 
       <!-- Code -->
       <mat-form-field class="col-span-5 md:col-span-3 md:row-start-1 md:col-start-10">
@@ -82,37 +89,28 @@
         <mat-label>Date de publication</mat-label>
         <input matInput [min]="minDate" [matDatepicker]="picker" name="date" [(ngModel)]="video.date_publication"
           required="" #date_publication="ngModel">
-        <mat-error *ngIf="date_publication.errors?.['required']">Ce champ est requis</mat-error>
+        <mat-hint>AAAA/MM/JJ</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="date_publication.errors?.['required']">Ce champ est requis</mat-error>
       </mat-form-field>
-      <!-- >= date du jour -->
-      <!-- TODO ?? comment faire validation personnalisé ? -->
+
 
     </div>
 
-    <div class="col-span-12 flex justify-center md:justify-end mt-6">
-      <button mat-button mat-aria-label="Annuler" mat-dialog-close (click)="annuler()">Annuler</button>
-    </div>
-    <div class="col-span-12 flex justify-center md:justify-end mt-6">
+    <!--TODO Si j'ai du temps changer couleur et curseur when disabled-->
+    <div class="col-span-12 flex justify-center gap-8 mt-6">
+      <button mat-button mat-aria-label="Annuler" mat-dialog-close ngClass="btn" (click)="annuler()">Annuler</button>
+
       <button *ngIf="video.id; else buttonAjout" mat-button mat-aria-label="Modifier" [disabled]="!videoForm.form.valid"
+        [ngStyle]="{'color': 'white', 'cursor': 'pointer', 'background-color': '#3B82F6', 'padding': '30px 80px', 'font-size': '20px', 'border-radius': '8px'}"
         (click)="updateVideo(videoForm)">Modifier</button>
+
       <ng-template #buttonAjout>
-        <div class="col-span-12 flex justify-center md:justify-end mt-6">
-          <button mat-button mat-aria-label="Ajouter" [disabled]="!videoForm.form.valid"
-            (click)="addVideo(videoForm)">Ajouter</button>
-        </div>
+        <button mat-button mat-aria-label="Ajouter" [disabled]="!videoForm.form.valid" ngClass="btn"
+          (click)="addVideo(videoForm)">Ajouter</button>
       </ng-template>
     </div>
-    <button mat-button mat-aria-label="Modifier" (click)="updateVideo(videoForm)">Modifier2</button>
-    <button mat-button mat-aria-label="Ajouter" (click)="addVideo(videoForm)">Ajouter2</button>
-
-    <!-- <div class="col-span-12 flex justify-center md:justify-end mt-6">
-      <button (click)="addVideo(videoForm)"
-        class="bg-blue-500 rounded-lg px-20 py-5 text-white text-xl focus:scale-110 hover:scale-110 mr-6"
-        [disabled]="!videoForm.form.valid">Soumettre</button>
-    </div> -->
-    <!--TODO corriger look when disabled surtout enlever le scale on dirait qu'il veux fonctionner-->
 
   </form>
 

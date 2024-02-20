@@ -24,16 +24,15 @@ export class FormulaireVideoComponent {
     id: 0,
     nom: '',
     description: '',
-    media: '',
+    media: '', // https://picsum.photos/id/237/200/300
     code: '',
     categories: [],
     auteur: AUTEURS[0],
-    date_publication: '2024-02-14', // TODO corriger format de date, il n'accepte pas le format reçu pat le date picker
-    duree: 0,
-    nb_vues: 0, // 0 en partant
-    score: 0, // 0 en partant
-    subtitle: 'CC',
-    avis: [],
+    date_publication: '',
+    duree: 1,
+    nb_vues: 0,
+    score: 0,
+    subtitle: '',
   };
 
   dureeString: string = '0';
@@ -50,7 +49,6 @@ export class FormulaireVideoComponent {
   formatLabel(value: number): string {
     const min = Math.floor(value / 60);
     const sec = value - min * 60 === 0 ? '00' : value - min * 60 < 10 ? `0${value - min * 60}` : value - min * 60;
-    // console.log('Value: ', value, 'min: ', min, 'sec: ', sec);
     this.dureeString = `${min}:${sec}`;
     return this.dureeString;
   }
@@ -109,32 +107,30 @@ export class FormulaireVideoComponent {
     );
   }
 
-  // submit
-  videoSubmit() {
-    console.log(this.video);
-  }
-
   ///// nouveau
 
+  formatDate(dateEntered: string) {
+    const date = new Date(dateEntered);
+    const annee = date.getFullYear();
+    const mois = date.getMonth() + 1;
+    const jour = date.getDate();
+    const dateFormated = `${annee}-${mois}-${jour}`;
+
+    this.video.date_publication = dateFormated;
+  }
+
   addVideo(videoForm: NgForm) {
-    console.log('this.video', this.video);
-    console.log('videoForm', videoForm);
+    this.formatDate(this.video.date_publication);
     if (videoForm.valid) {
-      console.log('Miip');
       this.videoService.addVideo(this.video).subscribe((_) => {
         videoForm.resetForm();
         this.dialogRef.close('Vidéo ajouté!');
-        // this._snackBar.open('Vidéo ajouté!', undefined, {
-        //   duration: 2000,
-        // });
       });
     }
   }
   updateVideo(videoForm: NgForm) {
-    console.log('this.video', this.video);
-    console.log('videoForm', videoForm);
+    this.formatDate(this.video.date_publication);
     if (videoForm.valid) {
-      console.log('Biip');
       this.videoService.updateVideo(this.video).subscribe((_) => {
         videoForm.resetForm();
         this.dialogRef.close('Vidéo modifié!');
