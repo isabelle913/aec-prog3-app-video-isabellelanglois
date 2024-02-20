@@ -54,6 +54,7 @@ import { AvisService } from './services/avis/avis.service';
 import { AdminVideoComponent } from './components/admin/admin-video/admin-video.component';
 import { AdminAvisComponent } from './components/admin/admin-avis/admin-avis.component';
 import { VisionnementComponent } from './components/utils/visionnement/visionnement.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { VisionnementComponent } from './components/utils/visionnement/visionnem
     AdminVideoComponent,
     AdminAvisComponent,
     VisionnementComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,
