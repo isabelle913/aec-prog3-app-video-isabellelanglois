@@ -1,8 +1,10 @@
 <mat-chip-listbox [ngClass]="{'mat-mdc-chip-set-stacked': stacked}" aria-label="List of categories" multiple>
-  <mat-chip-option *ngFor="let categorie of categories" [selected]="color" [color]="randomColor()" (select)="selected()"
+  <mat-chip-option *ngFor="let categorie of categories" [color]="randomColor()" (click)="addNewItem(categorie)"
     selected>
     {{ categorie }}
   </mat-chip-option>
 </mat-chip-listbox>
-<!--  <mat-chip-option> -->
-<!-- TODO ?? comment obtenir les catégories sélectionnées?? -->
+
+<!-- multiple -->
+<!-- routerLink="/admin" -->
+<!-- (click)="onSelect(categorie)" -->

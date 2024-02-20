@@ -23,6 +23,13 @@ export class ListeVideoComponent implements OnInit {
     private videoService: VideoService
   ) {}
 
+  items = ['item1'];
+
+  addItem(newItem: string) {
+    this.items.push(newItem);
+    console.log(this.items);
+  }
+
   ngOnInit(): void {
     const isFavorite: boolean | null =
       this.route.snapshot.url[1] &&
