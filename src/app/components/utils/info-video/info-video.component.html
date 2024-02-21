@@ -1,6 +1,6 @@
 <app-categories [categories]="video?.categories" [stacked]="isLargerThen1024" [color]="true"></app-categories>
 <div class="mt-5 flex flex-row lg:flex-col justify-start gap-x-5 lg:gap-y-3">
-  <!-- TODO vérifier si respect requis avec le publié à la suite -->
+
   <div>Publié il y a {{ video?.date_publication || '' | dateDelayToday }}</div>
   <app-visionnement [nb_vues]="video?.nb_vues" [date_publication]="video?.date_publication" [isShowTooltip]="false"
     [isShowDatePublication]="false" />
