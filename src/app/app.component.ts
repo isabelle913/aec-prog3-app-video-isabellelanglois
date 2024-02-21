@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { IVideo } from 'src/app/interfaces/ivideo';
 import { VIDEOS } from './mocks/mock-videos';
-import { VideoService } from 'src/app/services/video.service';
+import { VideoService } from 'src/app/services/video/video.service';
 
 @Component({
   selector: 'app-root',
