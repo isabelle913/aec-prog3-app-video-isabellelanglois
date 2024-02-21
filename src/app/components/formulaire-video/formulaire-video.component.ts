@@ -3,7 +3,7 @@ import { IVideo } from 'src/app/interfaces/ivideo';
 import { AUTEURS } from 'src/app/mocks/mock-auteurs';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { NgForm } from '@angular/forms';
-import { VideoService } from 'src/app/services/video.service';
+import { VideoService } from 'src/app/services/video/video.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
