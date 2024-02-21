@@ -3,9 +3,11 @@ import { IVideo } from '../interfaces/ivideo';
 
 @Pipe({
   name: 'filterCategories',
+  pure: false,
 })
 export class FilterCategoriesPipe implements PipeTransform {
   transform(videos: IVideo[], categories: string[]): IVideo[] {
+    console.log('Pipe -> categories', categories);
     const videosFiltered = new Set<IVideo>();
 
     categories.forEach((categorie) => {

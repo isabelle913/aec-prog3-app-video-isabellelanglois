@@ -5,7 +5,7 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
-import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { CATEGORIES } from 'src/app/mocks/mock-categories';
 
 @Component({
   selector: 'app-categories',
@@ -17,14 +17,14 @@ export class CategoriesComponent {
   @Input() categories: string[] | undefined = [];
   @Input() stacked: boolean = false;
   @Input() color: boolean = false;
-  @Output() newItemEvent = new EventEmitter<string>();
+  @Output() toggleCategoryEvent = new EventEmitter<string>();
+  categoriesMock = CATEGORIES;
 
-  categoriesSelected: string[] = [];
+  // categoriesSelected: string[] = [];
   availableColors: string[] = ['primary', 'accent', 'warn'];
 
-  addNewItem(value: string) {
-    console.log(value);
-    this.newItemEvent.emit(value);
+  onToggleCategory(categorie: string) {
+    this.toggleCategoryEvent.emit(categorie);
   }
   randomColor() {
     if (this.color === false) return;
@@ -33,9 +33,9 @@ export class CategoriesComponent {
   }
   // TODO ne pas pouvoir les sélectionner/desélectionner des full vidéos
 
-  onSelect(value: string) {
-    console.log(value);
-    this.categoriesSelected.push(value);
-    console.log('this.categoriesSelected', this.categoriesSelected);
-  }
+  // onSelect(value: string) {
+  //   console.log(value);
+  //   this.categoriesSelected.push(value);
+  //   console.log('this.categoriesSelected', this.categoriesSelected);
+  // }
 }

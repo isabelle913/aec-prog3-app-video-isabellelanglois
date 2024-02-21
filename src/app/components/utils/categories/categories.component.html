@@ -1,5 +1,5 @@
 <mat-chip-listbox [ngClass]="{'mat-mdc-chip-set-stacked': stacked}" aria-label="List of categories" multiple>
-  <mat-chip-option *ngFor="let categorie of categories" [color]="randomColor()" (click)="addNewItem(categorie)"
+  <mat-chip-option *ngFor="let categorie of categories" [color]="randomColor()" (click)="onToggleCategory(categorie)"
     selected>
     {{ categorie }}
   </mat-chip-option>
@@ -8,3 +8,4 @@
 <!-- multiple -->
 <!-- routerLink="/admin" -->
 <!-- (click)="onSelect(categorie)" -->
+<!-- selected -->

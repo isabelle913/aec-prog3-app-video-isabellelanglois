@@ -1,5 +1,7 @@
 <div class="p-5">
-  <app-categories [categories]="categories" (newItemEvent)="addItem($event)"></app-categories>
+
+  <app-categories [categories]="categories" (toggleCategoryEvent)="toggleCategory($event)"></app-categories>
+
   <div class="flex justify-center items-center gap-5 mt-10">
     <div class="text-2xl">Afficher les vidéos ayant un score entre: </div>
     <mat-slider min="-1000000" max="1000000" step="1000" showTickMarks discrete [displayWith]="formatLabel">
@@ -10,7 +12,8 @@
 
   <div class="liste__container">
 
-    <app-small-video *ngFor="let video of videos | filterScore : minScore : maxScore | filterCategories : items "
+    <app-small-video
+      *ngFor="let video of videos | filterScore : minScore : maxScore | filterCategories : categoriesSelected "
       [video]="video"></app-small-video>
     <!-- <app-small-video
       *ngFor="let video of videos | filterScore : minScore : maxScore | filterCategories : categoriesSelected"

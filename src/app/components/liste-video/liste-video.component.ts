@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IVideo } from 'src/app/interfaces/ivideo';
 import { CATEGORIES } from 'src/app/mocks/mock-categories';
-import { VIDEOS } from 'src/app/mocks/mock-videos';
-import { VideoService } from 'src/app/services/video.service';
+import { VideoService } from 'src/app/services/video/video.service';
 
 @Component({
   selector: 'app-liste-video',
@@ -11,9 +10,8 @@ import { VideoService } from 'src/app/services/video.service';
   styleUrls: ['./liste-video.component.css'],
 })
 export class ListeVideoComponent implements OnInit {
-  // videos = VIDEOS;
   videos: IVideo[] = [];
-  categories = CATEGORIES;
+  categories = [...CATEGORIES];
   minScore = 1000;
   maxScore = 1000000;
   categoriesSelected: string[] = [];
@@ -22,12 +20,20 @@ export class ListeVideoComponent implements OnInit {
     private route: ActivatedRoute,
     private videoService: VideoService
   ) {}
+  // TODO ménage
+  toggleCategory(category: string) {
+    console.log('categoriesSelected 0', this.categoriesSelected);
+    console.log('categories 0', this.categories);
 
-  items = ['item1'];
-
-  addItem(newItem: string) {
-    this.items.push(newItem);
-    console.log(this.items);
+    if (this.categoriesSelected.includes(category)) {
+      const index = this.categoriesSelected.indexOf(category);
+      this.categoriesSelected.splice(index, 1);
+    } else {
+      this.categoriesSelected.push(category);
+    }
+    console.log('categoriesSelected 1', this.categoriesSelected);
+    console.log('categories 1', this.categories);
+    console.log('CATEGORIES 1', CATEGORIES);
   }
 
   ngOnInit(): void {
@@ -39,8 +45,7 @@ export class ListeVideoComponent implements OnInit {
 
     isFavorite ? (this.minScore = 1000) : undefined;
 
-    this.categoriesSelected = CATEGORIES;
-
+    this.categoriesSelected = [...CATEGORIES];
     // console.log('categoriesSelected', this.categoriesSelected);
 
     this.getVideos();
@@ -50,7 +55,6 @@ export class ListeVideoComponent implements OnInit {
     this.minScore = value;
     return `${this.minScore}`;
   }
-  // TODO gérer les catégories sélectionnées
 
   getVideos(): void {
     this.videoService.getVideos().subscribe((response) => {
