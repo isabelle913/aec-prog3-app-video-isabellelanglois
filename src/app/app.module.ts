@@ -42,19 +42,23 @@ import { UtilisateurComponent } from './components/utils/utilisateur/utilisateur
 import { ThumbsComponent } from './components/utils/thumbs/thumbs.component';
 import { InfoVideoComponent } from './components/utils/info-video/info-video.component';
 import { FormulaireVideoComponent } from './components/formulaire-video/formulaire-video.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminVideoComponent } from './components/admin/admin-video/admin-video.component';
+import { AdminAvisComponent } from './components/admin/admin-avis/admin-avis.component';
+import { VisionnementComponent } from './components/utils/visionnement/visionnement.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+
+import { FilterCategoriesPipe } from './pipes/filter-categories.pipe';
 import { FormatDureePipe } from './pipes/format-duree.pipe';
 import { FormatVisionnementPipe } from './pipes/format-visionnement.pipe';
 import { FormatNumberLocalePipe } from './pipes/format-number-locale.pipe';
 import { DateDelayTodayPipe } from './pipes/date-delay-today.pipe';
 import { FilterScorePipe } from './pipes/filter-score.pipe';
-import { FilterCategoriesPipe } from './pipes/filter-categories.pipe';
-import { VideoService } from './services/video.service';
-import { AdminComponent } from './components/admin/admin.component';
+
+import { VideoService } from './services/video/video.service';
 import { AvisService } from './services/avis/avis.service';
-import { AdminVideoComponent } from './components/admin/admin-video/admin-video.component';
-import { AdminAvisComponent } from './components/admin/admin-avis/admin-avis.component';
-import { VisionnementComponent } from './components/utils/visionnement/visionnement.component';
-import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ScoreService } from './services/score/score.service';
+import { FormulaireAvisComponent } from './components/formulaire-avis/formulaire-avis.component';
 
 @NgModule({
   declarations: [
@@ -72,17 +76,19 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     ThumbsComponent,
     InfoVideoComponent,
     FormulaireVideoComponent,
+    AdminComponent,
+    AdminVideoComponent,
+    AdminAvisComponent,
+    VisionnementComponent,
+    AboutUsComponent,
+
     FormatDureePipe,
     FormatVisionnementPipe,
     FormatNumberLocalePipe,
     DateDelayTodayPipe,
     FilterScorePipe,
     FilterCategoriesPipe,
-    AdminComponent,
-    AdminVideoComponent,
-    AdminAvisComponent,
-    VisionnementComponent,
-    AboutUsComponent,
+    FormulaireAvisComponent,
   ],
   imports: [
     BrowserModule,
@@ -115,7 +121,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [VideoService, AvisService],
+  providers: [VideoService, AvisService, ScoreService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
