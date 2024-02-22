@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AvisService } from 'src/app/services/avis/avis.service';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -7,10 +7,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { IAvis } from 'src/app/interfaces/iavis';
-
-// TODO faire un formulaire pour les avis
-// TODO mettre un lien vers la page admin dans les formulaires
-// TODO mettre dans le full video une place pour ajouter un avis
+import { FormulaireAvisComponent } from '../../formulaire-avis/formulaire-avis.component';
 
 @Component({
   selector: 'app-admin-avis',
@@ -39,9 +36,6 @@ export class AdminAvisComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
-    this.getAvis();
-  }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSourceAvis.filter = filterValue.trim().toLowerCase();
@@ -50,6 +44,20 @@ export class AdminAvisComponent implements OnInit {
       this.dataSourceAvis.paginator.firstPage();
     }
   }
+
+  openFormAvis(avis?: IAvis) {
+    const dialogRef = this.dialog.open(FormulaireAvisComponent, {
+      data: avis,
+    });
+
+    dialogRef.afterClosed().subscribe((response) => {
+      if (response) {
+        this._snackBar.open(response, undefined, { duration: 2000 });
+        this.getAvis();
+      }
+    });
+  }
+
   getAvis(): void {
     this.avisService.getAvis().subscribe((response) => {
       this.dataSourceAvis = new MatTableDataSource(response);
@@ -58,22 +66,21 @@ export class AdminAvisComponent implements OnInit {
       this.tableAvis.renderRows();
     });
   }
-  openFormAvis(avis?: IAvis) {
-    // TODO modifier
-    console.log(avis);
-  }
+
   openFullVideo(id_video: number) {
-    // TODO modifier
-    console.log(id_video);
+    this.router.navigate(['/', 'video', id_video]);
   }
 
   deleteAvis(id: number) {
-    console.log('delete', id);
     this.avisService.deleteAvis(id).subscribe((_) => {
       this.getAvis();
       this._snackBar.open('Avis supprimé!', undefined, {
         duration: 2000,
       });
     });
+  }
+
+  ngOnInit(): void {
+    this.getAvis();
   }
 }
