@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormulaireVideoComponent } from '../formulaire-video/formulaire-video.component';
+import { FormulaireAvisComponent } from '../formulaire-avis/formulaire-avis.component';
+import { AdminVideoComponent } from './admin-video/admin-video.component';
+import { AdminAvisComponent } from './admin-avis/admin-avis.component';
 
 @Component({
   selector: 'app-admin',
@@ -11,13 +14,20 @@ import { FormulaireVideoComponent } from '../formulaire-video/formulaire-video.c
 export class AdminComponent {
   tab = 'video';
 
+  @ViewChild(AdminVideoComponent) AdminVideoComponent:
+    | { getVideos: () => void }
+    | undefined;
+
+  @ViewChild(AdminAvisComponent) AdminAvisComponent:
+    | { getAvis: any }
+    | undefined;
+
   constructor(private _snackBar: MatSnackBar, private dialog: MatDialog) {}
 
   onChangetab(tab: string) {
     this.tab = tab;
   }
 
-  //  <!--  [ngClass]="{tab==='video' ? 'hover:border-b-4 border-blue-500':'hover:border-b-4 border-gray-800'}" -->
   getClassTab(actualTab: string) {
     if (actualTab === this.tab)
       return 'w-[100px] text-2xl py-4 text-center border-b-4 border-blue-500 cursor-pointer';
@@ -32,7 +42,20 @@ export class AdminComponent {
     dialogRef.afterClosed().subscribe((response) => {
       if (response) {
         this._snackBar.open(response, undefined, { duration: 2000 });
-        // this.getVideos();  // TODO comment rafraichir page
+        this.AdminVideoComponent?.getVideos();
+      }
+    });
+  }
+
+  openFormAvis() {
+    const dialogRef = this.dialog.open(FormulaireAvisComponent, {
+      data: undefined,
+    });
+
+    dialogRef.afterClosed().subscribe((response) => {
+      if (response) {
+        this._snackBar.open(response, undefined, { duration: 2000 });
+        this.AdminAvisComponent?.getAvis();
       }
     });
   }
