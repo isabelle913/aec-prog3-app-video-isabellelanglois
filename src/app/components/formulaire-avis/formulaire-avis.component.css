@@ -1,0 +1,22 @@
+.container-form {
+  min-width: 500px;
+  width: 100%;
+  margin: 30px auto;
+  padding: 20px;
+}
+.slider-duree,
+.select-subtitle,
+.full-width {
+  width: 100%;
+}
+.btn {
+  color: white !important;
+  cursor: pointer;
+  background-color: #3b82f6;
+  padding: 30px 80px;
+  font-size: 20px;
+  border-radius: 8px;
+}
+.btn:hover {
+  scale: 1.1;
+}

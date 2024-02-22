@@ -1,1 +1,59 @@
-<p>formulaire-avis works!</p>
+<div class="container-form rounded-lg">
+
+
+
+  <form #avisForm="ngForm">
+
+    <p class="text-center text-4xl py-6">
+      <span *ngIf="avis.id === 0">Ajouter</span>
+      <span *ngIf="avis.id !== 0">Modifier</span>
+      un avis
+    </p>
+    <div class="grid grid-cols-12 gap-6">
+
+      <!-- id_video -->
+      <mat-form-field class="col-span-6">
+        <mat-label>ID du vidéo</mat-label>
+        <input type="number" matInput name="id_video" [(ngModel)]="avis.id_video" required #id_video="ngModel">
+        <mat-error *ngIf="id_video.errors?.['required']">Ce champ est requis</mat-error>
+      </mat-form-field>
+
+      <!-- note -->
+      <mat-form-field class="col-span-6">
+        <mat-label>Note</mat-label>
+        <input type="number" matInput name="note" min="1" max="10" [(ngModel)]="avis.note" required #note="ngModel">
+        <mat-error *ngIf="note.errors?.['required']">Ce champ est requis</mat-error>
+      </mat-form-field>
+
+      <!-- Commentaire -->
+      <mat-form-field class="col-span-12">
+        <mat-label>Commentaire</mat-label>
+        <textarea matInput name="commentaire" [(ngModel)]="avis.commentaire" required #commentaire="ngModel"></textarea>
+        <mat-error *ngIf="commentaire.errors?.['required']">Ce champ est requis</mat-error>
+      </mat-form-field>
+
+      <!-- boutons -->
+      <div class="col-span-12 flex justify-center gap-8 mt-6">
+        <button mat-button mat-aria-label="Annuler" mat-dialog-close ngClass="btn" (click)="annuler()">Annuler</button>
+
+        <button *ngIf="avis.id; else buttonAjout" mat-button mat-aria-label="Modifier" [disabled]="!avisForm.form.valid"
+          [ngStyle]="{'color': 'white', 'cursor': 'pointer', 'background-color': '#3B82F6', 'padding': '30px 80px', 'font-size': '20px', 'border-radius': '8px'}"
+          (click)="updateAvis(avisForm)">Modifier</button>
+
+        <ng-template #buttonAjout>
+          <button mat-button mat-aria-label="Ajouter" [disabled]="!avisForm.form.valid" ngClass="btn"
+            (click)="addAvis(avisForm)">Ajouter</button>
+        </ng-template>
+      </div>
+
+    </div>
+  </form>
+</div>
+
+<!--    id: 0,
+    id_video: 0,
+    note: 0,
+    commentaire: '',
+
+
+  boutons-->
