@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { VideoService } from 'src/app/services/video/video.service';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -37,10 +37,16 @@ export class AdminVideoComponent implements OnInit {
     private router: Router
   ) {}
 
-  // functions
-  openFormVideo(video?: IVideo) {
-    console.log(video);
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSourceVideos.filter = filterValue.trim().toLowerCase();
 
+    if (this.dataSourceVideos.paginator) {
+      this.dataSourceVideos.paginator.firstPage();
+    }
+  }
+
+  openFormVideo(video?: IVideo) {
     const dialogRef = this.dialog.open(FormulaireVideoComponent, {
       data: video,
     });
@@ -52,39 +58,30 @@ export class AdminVideoComponent implements OnInit {
       }
     });
   }
-  openFullVideo(id: number) {
-    console.log('id', id, typeof id);
-    this.router.navigate(['/', 'video', id]);
-  }
-  ngOnInit(): void {
-    this.getVideos();
-  }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSourceVideos.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSourceVideos.paginator) {
-      this.dataSourceVideos.paginator.firstPage();
-    }
-  }
   getVideos(): void {
     this.videoService.getVideos().subscribe((response) => {
-      // this.videos = response;
-
       this.dataSourceVideos = new MatTableDataSource(response);
       this.dataSourceVideos.paginator = this.paginator;
       this.dataSourceVideos.sort = this.sort;
       this.tableVideos.renderRows();
     });
   }
+
+  openFullVideo(id: number) {
+    this.router.navigate(['/', 'video', id]);
+  }
+
   deleteVideo(id: number) {
-    console.log('delete', id);
     this.videoService.deleteVideo(id).subscribe((_) => {
       this.getVideos();
       this._snackBar.open('Vidéo supprimé!', undefined, {
         duration: 2000,
       });
     });
+  }
+
+  ngOnInit(): void {
+    this.getVideos();
   }
 }
