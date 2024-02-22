@@ -8,7 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-// aelect
+// select
 interface ISubtitle {
   value: string;
   viewValue: string;
@@ -56,6 +56,7 @@ export class FormulaireVideoComponent {
   // date picker
   minDate: Date;
 
+  // TODO remplacer par le mock
   //chip autocmplete
   categoriesListe: string[] = [
     'Voyager',
@@ -77,7 +78,6 @@ export class FormulaireVideoComponent {
 
   constructor(
     private videoService: VideoService,
-    private _snackBar: MatSnackBar,
     private dialogRef: MatDialogRef<FormulaireVideoComponent>,
     @Inject(MAT_DIALOG_DATA) public data: IVideo
   ) {
@@ -91,7 +91,7 @@ export class FormulaireVideoComponent {
     }
   }
 
-  //// vieux
+  //// vieux TODO est-ce que doit garder
   remove(index: number) {
     this.video.categories.splice(index, 1);
   }

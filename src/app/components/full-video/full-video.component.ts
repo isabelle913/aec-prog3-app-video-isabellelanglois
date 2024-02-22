@@ -6,6 +6,8 @@ import { IVideo } from 'src/app/interfaces/ivideo';
 import { VideoService } from 'src/app/services/video/video.service';
 import { AvisService } from 'src/app/services/avis/avis.service';
 
+// TODO mettre dans le full video une place pour ajouter un avis
+
 @Component({
   selector: 'app-full-video',
   templateUrl: './full-video.component.html',
