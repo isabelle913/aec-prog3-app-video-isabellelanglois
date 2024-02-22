@@ -13,6 +13,7 @@
       </div>
       <app-admin-video *ngIf="tab==='video'"></app-admin-video>
       <app-admin-avis *ngIf="tab==='avis'"></app-admin-avis>
+      <div *ngIf="tab==='auteur'" class="text-center text-2xl pt-4">Nouveauté à venir</div>
     </div>
 
     <!-- droite -->
@@ -23,6 +24,12 @@
           <button (click)="openFormVideo()"
             class="bg-blue-500 rounded-lg px-20 py-5 text-white text-xl focus:scale-110 hover:scale-110 mr-6">
             Ajouter une vidéo
+          </button>
+        </div>
+        <div class="flex justify-center mt-6">
+          <button (click)="openFormAvis()"
+            class="bg-blue-500 rounded-lg px-20 py-5 text-white text-xl focus:scale-110 hover:scale-110 mr-6">
+            Ajouter un avis
           </button>
         </div>
       </div>
