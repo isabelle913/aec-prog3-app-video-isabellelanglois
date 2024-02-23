@@ -1,17 +1,20 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { IVideo } from 'src/app/interfaces/ivideo';
 import { AUTEURS } from 'src/app/mocks/mock-auteurs';
-import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { NgForm } from '@angular/forms';
 import { VideoService } from 'src/app/services/video/video.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Observable } from 'rxjs';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CATEGORIES } from 'src/app/mocks/mock-categories';
 
 // select
-interface ISubtitle {
+interface ISelect {
   value: string;
   viewValue: string;
+}
+interface ICheckbox {
+  name: string;
+  value: string;
+  checked: boolean;
 }
 
 @Component({
@@ -38,11 +41,14 @@ export class FormulaireVideoComponent {
   dureeString: string = '0';
 
   // select
-  subtitles: ISubtitle[] = [
+  subtitles: ISelect[] = [
     { value: 'none', viewValue: 'Aucun' },
     { value: 'st', viewValue: 'Sous-titres' },
     { value: 'cc', viewValue: 'Sous-titrage pour sourds et malentendants' },
   ];
+
+  // Checkbox
+  categoriesList: ICheckbox[] = [];
 
   // slider
   // prettier-ignore
@@ -56,26 +62,6 @@ export class FormulaireVideoComponent {
   // date picker
   minDate: Date;
 
-  // TODO remplacer par le mock
-  //chip autocmplete
-  categoriesListe: string[] = [
-    'Voyager',
-    'Québec',
-    'Apprendre',
-    'Programmation',
-    'JavaScript',
-    'Photographie',
-    'Chevaux',
-    'Règne animal',
-    'Angular',
-    'Photoshop',
-    'Cinéma',
-  ];
-  categoriesFiltrees: string[] = this.categoriesListe;
-  categoriesChoisis: string[] = []; // affiché dans les chips
-
-  categorie_input: string = '';
-
   constructor(
     private videoService: VideoService,
     private dialogRef: MatDialogRef<FormulaireVideoComponent>,
@@ -83,31 +69,11 @@ export class FormulaireVideoComponent {
   ) {
     // date picker
     this.minDate = new Date();
-    // Chip autocomplete
-    this.filtrer(); // Filtre au mounted
 
     if (data) {
       this.video = data;
     }
   }
-
-  //// vieux TODO est-ce que doit garder
-  remove(index: number) {
-    this.video.categories.splice(index, 1);
-  }
-  ajouter(event: MatAutocompleteSelectedEvent) {
-    if (!this.video.categories.includes(event.option.viewValue)) {
-      this.video.categories.push(event.option.viewValue);
-      this.categorie_input = '';
-    }
-  }
-  filtrer() {
-    this.categoriesFiltrees = this.categoriesFiltrees.filter((categorie) =>
-      categorie.toLowerCase().includes(this.categorie_input)
-    );
-  }
-
-  ///// nouveau
 
   formatDate(dateEntered: string) {
     const date = new Date(dateEntered);
@@ -121,6 +87,7 @@ export class FormulaireVideoComponent {
 
   addVideo(videoForm: NgForm) {
     this.formatDate(this.video.date_publication);
+    this.getCategoriesChecked();
     if (videoForm.valid) {
       this.videoService.addVideo(this.video).subscribe((_) => {
         videoForm.resetForm();
@@ -130,6 +97,8 @@ export class FormulaireVideoComponent {
   }
   updateVideo(videoForm: NgForm) {
     this.formatDate(this.video.date_publication);
+    this.getCategoriesChecked();
+    console.log('vidéo envoyé', this.video);
     if (videoForm.valid) {
       this.videoService.updateVideo(this.video).subscribe((_) => {
         videoForm.resetForm();
@@ -139,5 +108,34 @@ export class FormulaireVideoComponent {
   }
   annuler() {
     this.dialogRef.close();
+  }
+
+  setCategoriesList() {
+    const categories = [...CATEGORIES];
+
+    this.categoriesList = categories.map((category) => {
+      let checked = false;
+      if (this.video.categories.includes(category)) checked = true;
+
+      return { name: category, value: category, checked };
+    });
+  }
+  getCategoriesChecked() {
+    let response: string[] = [];
+
+    this.categoriesList.map((category) => {
+      if (category.checked) response.push(category.value);
+    });
+    this.video.categories = response;
+  }
+  ngOnInit() {
+    this.setCategoriesList();
+  }
+  changeValue(categoryCheked: ICheckbox) {
+    this.categoriesList.map((item) => {
+      if (item.name === categoryCheked.name) {
+        item.checked = !item.checked;
+      }
+    });
   }
 }

@@ -2,8 +2,11 @@
 
   <form #videoForm="ngForm">
 
-    <!-- TODO modifier titre si update -->
-    <p class="text-center text-4xl py-6">Ajouter une vidéo</p>
+    <p class="text-center text-4xl py-6">
+      <span *ngIf="video.id === 0">Ajouter</span>
+      <span *ngIf="video.id !== 0">Modifier</span>
+      une vidéo
+    </p>
 
     <div class="grid grid-cols-12 gap-y-6">
 
@@ -32,27 +35,6 @@
         <input matInput name="media" [(ngModel)]="video.media">
         <mat-hint>https://...</mat-hint>
       </mat-form-field>
-
-      <!-- TODO ?? je ne trouve pas de multiple select en template driven -->
-      <mat-form-field class="col-span-12 md:col-span-6">
-        <mat-label>Choisir les catégories appropriées:</mat-label>
-        <mat-chip-grid #chipGridCategories>
-          <mat-chip-row *ngFor="let categorie of video.categories; index as i" (removed)="remove(i)">
-            {{categorie}}
-            <button matChipRemove>
-              <mat-icon>cancel</mat-icon>
-            </button>
-          </mat-chip-row>
-        </mat-chip-grid>
-        <input placeholder="Ajouter une catégorie..." name="categories" [(ngModel)]="categorie_input" #categorieInput
-          [matChipInputFor]="chipGridCategories" [matAutocomplete]="auto" (ngModelChange)="filtrer()" required />
-        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="ajouter($event)">
-          <mat-option *ngFor="let categorie of categoriesFiltrees" [value]="categorie">
-            {{categorie}}
-          </mat-option>
-        </mat-autocomplete>
-      </mat-form-field>
-
 
       <!-- Sous-titres -->
       <mat-form-field class="col-span-12 md:col-span-5 md:col-start-8">
@@ -89,14 +71,24 @@
         <mat-label>Date de publication</mat-label>
         <input matInput [min]="minDate" [matDatepicker]="picker" name="date" [(ngModel)]="video.date_publication"
           required="" #date_publication="ngModel">
-        <mat-hint>AAAA/MM/JJ</mat-hint>
+        <mat-hint>AAAA/MM/JJ Attention la date doit être égale ou supérieur à aujourd'hui!</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
         <mat-error *ngIf="date_publication.errors?.['required']">Ce champ est requis</mat-error>
       </mat-form-field>
 
+      <!-- Checkbox -->
+      <div class="col-span-12 flex flex-wrap">
+        <section *ngFor="let category of categoriesList">
+          <mat-checkbox class="example-margin" name="categorie" [checked]="category.checked"
+            (click)="changeValue(category)">
+            {{ category.name }}
+          </mat-checkbox>
+        </section>
+      </div>
 
     </div>
+
 
     <!--TODO Si j'ai du temps changer couleur et curseur when disabled-->
     <div class="col-span-12 flex justify-center gap-8 mt-6">
