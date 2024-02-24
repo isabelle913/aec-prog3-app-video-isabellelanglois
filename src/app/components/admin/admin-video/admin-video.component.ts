@@ -8,6 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { FormulaireVideoComponent } from '../../formulaire-video/formulaire-video.component';
 import { IVideo } from 'src/app/interfaces/ivideo';
+import { AvisService } from 'src/app/services/avis/avis.service';
 
 @Component({
   selector: 'app-admin-video',
@@ -34,7 +35,8 @@ export class AdminVideoComponent implements OnInit {
     private videoService: VideoService,
     private _snackBar: MatSnackBar,
     private dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private avisService: AvisService
   ) {}
 
   applyFilter(event: Event) {
@@ -73,11 +75,19 @@ export class AdminVideoComponent implements OnInit {
   }
 
   deleteVideo(id: number) {
-    this.videoService.deleteVideo(id).subscribe((_) => {
-      this.getVideos();
-      this._snackBar.open('Vidéo supprimé!', undefined, {
-        duration: 2000,
-      });
+    this.avisService.getAvisOneVideo(id).subscribe((response) => {
+      if (response.length > 0 && typeof response !== 'string') {
+        this._snackBar.open('Supprimer les avis avant!!', undefined, {
+          duration: 4000,
+        });
+      } else {
+        this.videoService.deleteVideo(id).subscribe((_) => {
+          this.getVideos();
+          this._snackBar.open('Vidéo supprimé!', undefined, {
+            duration: 2000,
+          });
+        });
+      }
     });
   }
 
