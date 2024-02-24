@@ -47,8 +47,14 @@
   <ng-template #elseAvisBlock>
     <div class="col-span-12 lg:col-span-9">Aucun commentaire pour l'instant. Consulter la page d'administration pour en
       ajouter</div>
-    <!-- TODO ajouter bouton pour ajouter avis -->
+
   </ng-template>
+  <div class="col-span-12 lg:col-span-9 flex justify-center">
+    <button (click)="openFormAvis()"
+      class="bg-blue-500 rounded-lg px-20 py-5 text-white text-xl focus:scale-110 hover:scale-110 mr-6">
+      Ajouter un avis
+    </button>
+  </div>
 
 </div>
 
