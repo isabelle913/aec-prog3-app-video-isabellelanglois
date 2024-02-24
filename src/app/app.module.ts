@@ -60,6 +60,7 @@ import { VideoService } from './services/video/video.service';
 import { AvisService } from './services/avis/avis.service';
 import { ScoreService } from './services/score/score.service';
 import { FormulaireAvisComponent } from './components/formulaire-avis/formulaire-avis.component';
+import { CategoriesListeComponent } from './components/categories-liste/categories-liste.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { FormulaireAvisComponent } from './components/formulaire-avis/formulaire
     FilterScorePipe,
     FilterCategoriesPipe,
     FormulaireAvisComponent,
+    CategoriesListeComponent,
   ],
   imports: [
     BrowserModule,
