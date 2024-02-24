@@ -1,21 +1,12 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { IVideo } from 'src/app/interfaces/ivideo';
 import { AUTEURS } from 'src/app/mocks/mock-auteurs';
 import { NgForm } from '@angular/forms';
 import { VideoService } from 'src/app/services/video/video.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CATEGORIES } from 'src/app/mocks/mock-categories';
-
-// select
-interface ISelect {
-  value: string;
-  viewValue: string;
-}
-interface ICheckbox {
-  name: string;
-  value: string;
-  checked: boolean;
-}
+import { ISelect } from 'src/app/interfaces/iselect';
+import { ICheckbox } from 'src/app/interfaces/icheckbox';
 
 @Component({
   selector: 'app-formulaire-video',
@@ -98,7 +89,7 @@ export class FormulaireVideoComponent {
   updateVideo(videoForm: NgForm) {
     this.formatDate(this.video.date_publication);
     this.getCategoriesChecked();
-    console.log('vidéo envoyé', this.video);
+
     if (videoForm.valid) {
       this.videoService.updateVideo(this.video).subscribe((_) => {
         videoForm.resetForm();
