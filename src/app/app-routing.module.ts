@@ -5,11 +5,13 @@ import { ListeVideoComponent } from './components/liste-video/liste-video.compon
 import { FormulaireVideoComponent } from './components/formulaire-video/formulaire-video.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { CategoriesListeComponent } from './components/categories-liste/categories-liste.component';
 
 const routes: Routes = [
   { path: 'videos', component: ListeVideoComponent },
   { path: 'videos/favorite', component: ListeVideoComponent },
   { path: 'video/:id', component: FullVideoComponent },
+  { path: 'categorie/:categorie', component: CategoriesListeComponent },
   { path: 'add', component: FormulaireVideoComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'about', component: AboutUsComponent },

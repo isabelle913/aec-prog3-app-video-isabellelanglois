@@ -1,6 +1,16 @@
-<mat-form-field appearance="fill">
-  <mat-label>Recherche</mat-label>
-  <input matInput placeholder="Placeholder" [(ngModel)]="searchWord">
-  <mat-icon matSuffix>search</mat-icon>
-  <mat-hint>{{ searchWord }}</mat-hint>
-</mat-form-field>
+<form #categoryForm="ngForm" class="flex items-center">
+  <div class="text-sm mr-4 mb-4">
+    Juste pour avoir mes 5 points au critères #2
+  </div>
+  <mat-form-field class="w-[300px]">
+    <mat-label>Recherche par catégorie</mat-label>
+    <mat-select name="categorySelected" [(value)]="categorySelected">
+      <mat-option *ngFor="let category of categoriesList" [value]="category.value">
+        {{category.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button class="mb-4" type="button" mat-icon-button (click)="onSelect()">
+    <mat-icon>arrow_forward</mat-icon>
+  </button>
+</form>

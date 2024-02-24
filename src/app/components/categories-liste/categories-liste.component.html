@@ -1,0 +1,10 @@
+<div class="text-center text-4xl my-8 py-4 border-b-2 border-blue-100">Vidéos par catégorie: {{ categorySelected }}
+</div>
+<div class="liste__container">
+  <app-small-video *ngFor="let video of videosFiltered" [video]="video"></app-small-video>
+</div>
+<div class="col-span-12 lg:col-span-9 flex justify-center py-8">
+  <a class="bg-blue-500 rounded-lg px-20 py-5 text-white text-xl focus:scale-110 hover:scale-110 mr-6" href="/">
+    Retour à l'accueil
+  </a>
+</div>
