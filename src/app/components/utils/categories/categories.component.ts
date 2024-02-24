@@ -17,13 +17,13 @@ export class CategoriesComponent {
   @Input() categories: string[] | undefined = [];
   @Input() stacked: boolean = false;
   @Input() color: boolean = false;
+  @Input() isActiveEvent: boolean = true;
   @Output() toggleCategoryEvent = new EventEmitter<string>();
-  categoriesMock = CATEGORIES;
 
-  // categoriesSelected: string[] = [];
   availableColors: string[] = ['primary', 'accent', 'warn'];
 
   onToggleCategory(categorie: string) {
+    if (!this.isActiveEvent) return;
     this.toggleCategoryEvent.emit(categorie);
   }
   randomColor() {
@@ -31,11 +31,4 @@ export class CategoriesComponent {
     const indexRandom = Math.trunc(Math.random() * 3) + 1;
     return this.availableColors[indexRandom];
   }
-  // TODO ne pas pouvoir les sélectionner/desélectionner des full vidéos
-
-  // onSelect(value: string) {
-  //   console.log(value);
-  //   this.categoriesSelected.push(value);
-  //   console.log('this.categoriesSelected', this.categoriesSelected);
-  // }
 }
