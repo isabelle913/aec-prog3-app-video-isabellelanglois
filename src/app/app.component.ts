@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { IVideo } from 'src/app/interfaces/ivideo';
-import { VIDEOS } from './mocks/mock-videos';
 import { VideoService } from 'src/app/services/video/video.service';
+import { AUTEURS } from './mocks/mock-auteurs';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +9,9 @@ import { VideoService } from 'src/app/services/video/video.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  videosMock = VIDEOS;
-  videos: IVideo[] = [];
-  utilisateur = this.videosMock[0].auteur; // TODO remplacé videosMock // TODO faire un mock utilisateur
+  // videosMock = VIDEOS;
+  // videos: IVideo[] = [];
+  utilisateur = AUTEURS[0];
   isSmallScreen = false;
   isLargeScreen = false;
   drawerToggle = false;
@@ -38,19 +37,5 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.isSmallMenuOpen =
       !this.drawerToggle && !this.isSmallScreen ? true : false;
-
-    // this.getVideos(); // TODO Pas nécessaire
-  }
-
-  getVideos(): void {
-    this.videoService.getVideos().subscribe((response) => {
-      this.videos = response;
-    });
   }
 }
-// TODO la page d'acceuil doit être les vidéos les plus populaire avec les pipes
-// TODO une autre page??
-// TODO page a propos
-// mettre mes liens actif, une apparence différenet si actifs
-// faire un readme avec conseils ou commentaire pour Carine
-// Faire ménage sur les données de la BD

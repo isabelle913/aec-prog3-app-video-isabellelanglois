@@ -10,7 +10,6 @@ export const VIDEOS: IVideo[] = [
     code: 'V001',
     categories: ['Voyager', 'Québec'],
     auteur: {
-      // TODO
       nom: 'Une curieuse',
       utilisateur: 'test@test.ca',
       verifie: true,

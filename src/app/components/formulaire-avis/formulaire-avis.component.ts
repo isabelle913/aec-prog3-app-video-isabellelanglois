@@ -27,7 +27,6 @@ export class FormulaireAvisComponent {
     }
   }
   addAvis(avisForm: NgForm) {
-    console.log('addAvis', avisForm);
     if (avisForm.valid) {
       this.avisService.addAvis(this.avis).subscribe((_) => {
         avisForm.resetForm();
@@ -36,7 +35,6 @@ export class FormulaireAvisComponent {
     }
   }
   updateAvis(avisForm: NgForm) {
-    console.log('addAvis', avisForm);
     if (avisForm.valid) {
       this.avisService.updateAvis(this.avis).subscribe((_) => {
         avisForm.resetForm();
@@ -48,6 +46,3 @@ export class FormulaireAvisComponent {
     this.dialogRef.close();
   }
 }
-// ajouter un avis d'admin -> id sera nouveau +  id_video sera à inscrire
-// ajouter un avis du full vidéo -> id_video sera fourni
-// Modifié un avis

@@ -15,8 +15,5 @@
     <app-small-video
       *ngFor="let video of videos | filterScore : minScore : maxScore | filterCategories : categoriesSelected "
       [video]="video"></app-small-video>
-    <!-- <app-small-video
-      *ngFor="let video of videos | filterScore : minScore : maxScore | filterCategories : categoriesSelected"
-      [video]="video"></app-small-video> -->
   </div>
 </div>

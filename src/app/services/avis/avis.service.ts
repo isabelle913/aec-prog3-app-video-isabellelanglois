@@ -21,7 +21,6 @@ export class AvisService {
   getAvisOneVideo(id_video: number): Observable<IAvis[]> {
     return this.http.get<IAvis[]>(`${this.API_URL_AVIS}?video=${id_video}`);
   }
-  // TODO tester/valider les foncdtions suivantes
   getOneAvis(id: number): Observable<IAvis> {
     return this.http.get<IAvis>(`${this.API_URL_AVIS}?id=${id}`);
   }

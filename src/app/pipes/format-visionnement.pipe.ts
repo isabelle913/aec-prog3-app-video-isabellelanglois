@@ -14,11 +14,5 @@ export class FormatVisionnementPipe implements PipeTransform {
     if (value > 1000000) {
       return Math.floor(value / 1000000) + 'M';
     } else return '';
-
-    // si 0 -> 'Aucun visionnement
-    // si 1 -> 1 visionnement
-    // si n -> n visionnements
-
-    // return value;
   }
 }
