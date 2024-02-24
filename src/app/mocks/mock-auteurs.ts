@@ -4,7 +4,7 @@ export const AUTEURS: IAuteur[] = [
   {
     nom: 'Jeanne BlancheVille',
     utilisateur: 'Jeanne',
-    verifie: false,
+    verifie: true,
     avatar: '',
     coordonnees: {},
     auteurDescription: 'Une description',

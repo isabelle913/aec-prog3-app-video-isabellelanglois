@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IAuteur } from 'src/app/interfaces/iauteur';
 import { IVideo } from 'src/app/interfaces/ivideo';
+import { AUTEURS } from 'src/app/mocks/mock-auteurs';
 import { CATEGORIES } from 'src/app/mocks/mock-categories';
 import { VideoService } from 'src/app/services/video/video.service';
 
@@ -15,25 +17,20 @@ export class ListeVideoComponent implements OnInit {
   minScore = 1000;
   maxScore = 1000000;
   categoriesSelected: string[] = [];
+  auteur: IAuteur = AUTEURS[0];
 
   constructor(
     private route: ActivatedRoute,
     private videoService: VideoService
   ) {}
-  // TODO ménage
-  toggleCategory(category: string) {
-    console.log('categoriesSelected 0', this.categoriesSelected);
-    console.log('categories 0', this.categories);
 
+  toggleCategory(category: string) {
     if (this.categoriesSelected.includes(category)) {
       const index = this.categoriesSelected.indexOf(category);
       this.categoriesSelected.splice(index, 1);
     } else {
       this.categoriesSelected.push(category);
     }
-    console.log('categoriesSelected 1', this.categoriesSelected);
-    console.log('categories 1', this.categories);
-    console.log('CATEGORIES 1', CATEGORIES);
   }
 
   ngOnInit(): void {
@@ -46,7 +43,6 @@ export class ListeVideoComponent implements OnInit {
     isFavorite ? (this.minScore = 1000) : undefined;
 
     this.categoriesSelected = [...CATEGORIES];
-    // console.log('categoriesSelected', this.categoriesSelected);
 
     this.getVideos();
   }
@@ -59,6 +55,9 @@ export class ListeVideoComponent implements OnInit {
   getVideos(): void {
     this.videoService.getVideos().subscribe((response) => {
       this.videos = response;
+      this.videos.map((video) => {
+        video.auteur = this.auteur;
+      });
     });
   }
 }
